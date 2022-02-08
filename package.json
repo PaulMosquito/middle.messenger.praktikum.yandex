@@ -1,0 +1,24 @@
+{
+  "name": "messenger",
+  "version": "1.0.0",
+  "description": "project for yandex praktikum",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "parcel index.html -p 3000",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulMosquito/middle.messenger.praktikum.yandex.git"
+  },
+  "author": "Komarov Pavel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulMosquito/middle.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/PaulMosquito/middle.messenger.praktikum.yandex#readme",
+  "dependencies": {
+    "parcel": "^2.2.1"
+  }
+}

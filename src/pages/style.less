@@ -6,11 +6,22 @@
 @grey: #999999;
 
 html, body {
+    height: 100%;
     font-size: 13px;
+    overflow: hidden;
 }
 body {
     margin: 0;
     padding: 0;
     color: @black;
     background: @primary;
+}
+
+.sign-in,
+.sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    width: auto;
 }

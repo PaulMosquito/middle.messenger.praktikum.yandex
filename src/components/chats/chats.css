@@ -1,0 +1,26 @@
+.chats {
+  height: 100%;
+  width: 24%;
+  border-right: 1px solid #EAEAEA;
+}
+.chats__title {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 1rem;
+  border-bottom: 1px solid;
+  padding: 1rem 0;
+}
+.chats__title__setting-button {
+  display: block;
+  width: 20%;
+  height: 30px;
+  background-color: aquamarine;
+}
+.chats__title__search {
+  width: 80%;
+}
+.chats__list {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}

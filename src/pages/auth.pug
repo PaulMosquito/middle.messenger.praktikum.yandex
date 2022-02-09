@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  include ../components/input/input.pug
+  include ../components/title/title.pug
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    style
+      include style.css
+
+    title message
+  body
+    div.sign-up
+      div.sign-up__wrapper
+        +title({ value: "LET'S TALK ABOUT YOURSELF", center: true })
+        +input({ name: "Mail" })
+        +input({ name: "Login" })
+        +input({ name: "Name" })
+        +input({ name: "Last Name" })
+        +input({ name: "Phone number" })
+        +input({ name: "Password", type: "password" })
+        +input({ name: "Repeat password", type: "password" })
+
+        a(href="/chat") Let's go!
+        a(href="/login") Sign in
+    script(type="module", src="index.js")

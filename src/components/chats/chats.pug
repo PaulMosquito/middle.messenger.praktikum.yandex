@@ -1,0 +1,14 @@
+style
+    include chats.less
+
+include ../conversation/conversation.pug
+
+
+mixin chats({ list=[] })
+    div.chats 
+        div.chats__title
+            a(class="chats__title__setting-button" href="/profile")
+            input.chats__title__search(placeholder="Search")
+        div.chats__list
+            each val in list
+                +conversation(val)

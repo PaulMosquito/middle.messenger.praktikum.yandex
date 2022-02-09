@@ -1,0 +1,30 @@
+.conversation {
+  height: 4rem;
+  display: flex;
+}
+.conversation-logo {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: gray;
+}
+.conversation-name-and-message {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+}
+.conversation-unread-message-and-date {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.conversation-name-and-message__name,
+.conversation-unread-message-and-date__date {
+  flex: 1;
+  color: black;
+}
+.conversation-name-and-message__message,
+.conversation-unread-message-and-date__unread-message {
+  flex: 2;
+  color: grey;
+}

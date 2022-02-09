@@ -1,0 +1,8 @@
+style
+    include title.less
+
+mixin title({ value, center=false })
+    if center
+        span.title_center=value
+    else 
+        span.title=value

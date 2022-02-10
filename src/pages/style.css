@@ -18,3 +18,10 @@ body {
   height: 600px;
   width: auto;
 }
+.page {
+  height: 100%;
+  display: flex;
+}
+.right-block {
+  width: 100%;
+}

@@ -1,0 +1,96 @@
+.lenta {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.lenta__header,
+.lenta__footer {
+    display: flex;
+    align-items: center;
+    height: 54px;
+    width: 100%;
+    background: lightblue;
+}
+
+.lenta__footer {
+    height: auto;
+    padding: 1rem 4.5rem;
+    background: transparent;
+    width: auto;
+    justify-content: space-around;
+}
+
+.lenta__header__logo {
+    flex: 1;
+}
+
+.lenta__header__logo__image {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background: gray;
+}
+
+.lenta__header__name {
+    flex: 10;
+    color: black;
+}
+
+.lenta__header__setting {
+    flex: 1;
+    height: 100%;
+    background: red;
+}
+
+.lenta__conversation {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 4rem;
+    overflow: hidden;
+    overflow-y: scroll;    
+
+}
+
+.type-message-block {
+    display: flex;
+    background: grey;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.type-message {
+    display: inline-block;
+    min-height: 42px;
+    width: auto;
+    min-width: 800px;
+    max-width: 900px;
+    font-size: 16px;
+    margin-right: 1rem;
+}
+
+.type-message[contenteditable] {
+    font-size: 16px;
+    color: black;
+    background-color: transparent;
+}
+
+.type-message[contenteditable]:hover,
+.type-message[contenteditable]:active,
+.type-message[contenteditable]:focus-visible {
+    border: 0;
+    outline: 0;
+}
+
+.type-message[contenteditable]:empty::before {
+  content: "Message";
+}
+
+
+.send-message {
+    width: 68px;
+    height: 68px;
+    background: olive;  
+    border-radius: 50%;
+}

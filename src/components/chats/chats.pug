@@ -2,6 +2,8 @@ style
     include chats.less
 
 include ../conversation/conversation.pug
+include ../modal/modal.pug
+include ../createChat/createChat.pug
 
 
 mixin chats({ list=[] })
@@ -9,6 +11,14 @@ mixin chats({ list=[] })
         div.chats__title
             a(class="chats__title__setting-button" href="/profile")
             input.chats__title__search(placeholder="Search")
+
         div.chats__list
+            +modal(["Profile", "Sign out"])
+                
+            +createChat()
             each val in list
                 +conversation(val)
+            
+
+        
+

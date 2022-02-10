@@ -1,0 +1,9 @@
+style
+    include message.less
+
+mixin message({ isMe, message, date })
+    div(class=isMe? "message__right" : "message__left")
+        div(class=isMe? "my-message" : "other-message")
+            div.message-text=message
+            div.message-time=date
+    

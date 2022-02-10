@@ -1,0 +1,17 @@
+style
+    include modal.less
+
+mixin modal(list=[], bottom)
+    if bottom
+        div(class="modal modal_bottom")
+            each val in list
+                    div.modal_row
+                        div.modal__row__icon
+                        div.modal__row__title=val
+    else 
+        div.modal
+            each val in list
+                div.modal_row
+                    div.modal__row__icon
+                    div.modal__row__title=val
+                    

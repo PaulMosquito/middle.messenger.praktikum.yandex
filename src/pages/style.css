@@ -12,11 +12,13 @@ body {
 }
 .sign-in,
 .sign-up {
+  width: 28rem;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 600px;
   width: auto;
+  padding-top: 8rem;
 }
 .page {
   height: 100%;

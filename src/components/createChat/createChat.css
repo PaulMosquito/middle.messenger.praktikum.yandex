@@ -2,12 +2,12 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 1rem 1.75rem;
+  margin: 1rem;
 }
 .create-button {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
   border: 0;
-  background: orange;
+  background: #3369F3;
 }

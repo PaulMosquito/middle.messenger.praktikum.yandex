@@ -1,30 +1,86 @@
 .conversation {
-  height: 4rem;
   display: flex;
+  align-items: flex-start;
+  width: 360px;
+  height: 72px;
+  border-bottom: 1px solid #EAEAEA;
+  margin: 0 1rem;
+  padding: 8px 0;
+  box-sizing: border-box;
 }
 .conversation-logo {
-  height: 3rem;
-  width: 3rem;
+  flex: 4;
+  min-width: 55px;
+  padding-right: 16px;
+}
+.conversation-logo_icon {
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
-  background: gray;
+  background: #000000;
 }
 .conversation-name-and-message {
-  flex: 6;
+  flex: 16;
+  width: 230px;
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+.conversation-name-and-message__name {
+  flex: 2;
+  font-size: 16px;
+}
+.conversation-name-and-message__message {
+  flex: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+  inline-size: inherit;
+  overflow-wrap: break-word;
+  line-height: 1.25rem;
+  font-size: 13px;
+  color: #999999;
 }
 .conversation-unread-message-and-date {
-  flex: 1;
+  flex: 2;
+  font-size: 11px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
-.conversation-name-and-message__name,
 .conversation-unread-message-and-date__date {
   flex: 1;
-  color: black;
+  color: #999999;
 }
-.conversation-name-and-message__message,
-.conversation-unread-message-and-date__unread-message {
+.conversation-unread-message-and-date__unread-messages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 2;
-  color: grey;
+}
+.conversation-unread-message-and-date__unread-messages__count {
+  color: #FFFFFF;
+  background: #3369F3;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 680px) {
+  .conversation {
+    width: 55px;
+    box-sizing: border-box;
+  }
+  .conversation-name-and-message,
+  .conversation-unread-message-and-date {
+    flex: 0;
+    visibility: hidden;
+  }
 }

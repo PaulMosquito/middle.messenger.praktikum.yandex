@@ -24,6 +24,9 @@ body {
   height: 100%;
   display: flex;
 }
+.left-block {
+  flex: 3;
+}
 .right-block {
-  width: 100%;
+  flex: 10;
 }

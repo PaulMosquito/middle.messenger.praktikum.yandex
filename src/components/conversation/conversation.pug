@@ -14,5 +14,6 @@ mixin conversation({ name, lastMessage, lastMessageDate, countUnreadMessages })
 
         div.conversation-unread-message-and-date
             div.conversation-unread-message-and-date__date="00:00"
-            div.conversation-unread-message-and-date__unread-messages
-                div.conversation-unread-message-and-date__unread-messages__count=countUnreadMessages > 99 ? "99+" : countUnreadMessages 
+            if countUnreadMessages > 0 
+                div.conversation-unread-message-and-date__unread-messages
+                    div.conversation-unread-message-and-date__unread-messages__count=countUnreadMessages > 99 ? "99+" : countUnreadMessages 

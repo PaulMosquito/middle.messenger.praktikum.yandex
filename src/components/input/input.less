@@ -3,12 +3,12 @@
     border: 0;
     margin: 0;
     width: 28rem;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .input-form_legend {
     visibility: hidden;
-    color: gray;
+    color: #999999;
     padding: 0;
     font-size: 13px;
 }
@@ -17,14 +17,17 @@
     box-sizing: border-box;
     outline: 0;
     border: 0;
-    border-bottom: 1px solid #3369F3;
+    border-bottom: 1px solid rgb(51, 105, 243);
     padding: 4px 0;
     font-size: 16px;
 }
 
 .input-form_input::placeholder {
     color: gray;
-  }
+}
+.input-form_input:hover::placeholder {
+    color: #000000;
+}
 
 .input-form_input:focus-visible {
     outline: 0;

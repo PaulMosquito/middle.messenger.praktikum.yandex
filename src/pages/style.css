@@ -18,7 +18,7 @@ body {
   justify-content: center;
   height: 600px;
   width: auto;
-  padding-top: 8rem;
+  padding-top: 12rem;
 }
 .page {
   height: 100%;
@@ -29,4 +29,7 @@ body {
 }
 .right-block {
   flex: 10;
+}
+.form-input {
+  margin-bottom: 32px;
 }

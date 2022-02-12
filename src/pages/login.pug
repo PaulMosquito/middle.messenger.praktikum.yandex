@@ -16,8 +16,9 @@ html(lang="en")
     div.sign-in
       div.sign-in__wrapper
         +title({ value: "WHO A U?", center: true })
-        +input({ name: "Login" })
-        +input({ name: "Password", type: "password" })
+        .form-input
+          +input({ name: "Login" })
+          +input({ name: "Password", type: "password" })
         +link({href: "/chat", title: "Sign in", isButton: true})
         +link({href: "/auth", title: "Sign up"})
 

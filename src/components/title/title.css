@@ -1,3 +1,9 @@
+.title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
 .title_center {
+  font-size: 18px;
   text-align: center;
+  margin-bottom: 8px;
 }

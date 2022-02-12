@@ -11,15 +11,14 @@ mixin lenta()
         div.lenta__header
             div.lenta__header__logo
                 div.lenta__header__logo__image
-            div.lenta__header__name
+            div.lenta__header__name="Jordan"
             div.lenta__header__setting
         div.lenta__conversation
             each val in CONVERSATION
                 +message(val)
 
         div.lenta__footer
-            div.type-message-block
-                div(class="type-message" contenteditable=true)
+            div(class="type-message" contenteditable=true)
             
             div(class="send-message")
 

@@ -8,21 +8,32 @@
 .lenta__footer {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: center;    
+    justify-content: space-around;    
     height: 54px;
-    background: lightblue;
-    padding: 0.5rem;
+
+    margin: 0 4.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    height: fit-content;
+    
+    background: #FFFFFF;
+}
+.lenta__header {
+    border-bottom: 1px solid #EAEAEA;
+    padding: 12px 0.5rem;
+
 }
 
 .lenta__footer {
-    background: #FFFFFF;
-    justify-content: space-around;
-    padding: 0 4.5rem;
-    margin-bottom: 1rem;
+    padding: 22px 0.5rem;
+    border-top: 1px solid #EAEAEA
 }
 
 .lenta__header__logo {
-    flex: 1;
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
 }
 
 .lenta__header__logo__image {
@@ -34,13 +45,14 @@
 
 .lenta__header__name {
     flex: 10;
-    color: black;
+    color: #000000;
+    font-size: 16px;
 }
 
 .lenta__header__setting {
-    flex: 1;
-    height: 100%;
-    background: red;
+    width: 48px;
+    height: 48px;
+    background: #000000;
 }
 
 .lenta__conversation {
@@ -53,25 +65,24 @@
     flex: 20;
 }
 
-.type-message-block {
-    display: flex;
-    background: #999999;
-    padding: 1rem;
-    border-radius: 12px;
-    color: #FFFFFF;
-}
-
-.type-message {
-    display: inline-block;
-    min-height: 42px;
-    font-size: 16px;
-    margin-right: 1rem;
-}
-
 .type-message[contenteditable] {
+    flex: 10;
+    display: inline-block;
+
     font-size: 16px;
+
+    background: #EFEFEF;
+
+    width: inherit;
+    margin-right: 1rem;
+    padding: 1rem;
+    border-radius: 32px;
+    z-index: 1000;
+    overflow-wrap: anywhere;
+}
+
+.type-message[contenteditable]:not(:placeholder-shown) {
     color: black;
-    background-color: transparent;
 }
 
 .type-message[contenteditable]:hover,
@@ -83,12 +94,27 @@
 
 .type-message[contenteditable]:empty::before {
   content: "Message";
+  color: #999999;
 }
 
 
 .send-message {
-    width: 68px;
-    height: 68px;
-    background: olive;  
+    width: 44px;
+    height: 44px;
+    background: #3369F3;  
     border-radius: 50%;
+}
+
+
+@media only screen and (max-width:680px) {
+    .conversation {
+        width: 55px;       
+        box-sizing: border-box;
+    }
+    
+    .conversation-name-and-message,
+    .conversation-unread-message-and-date {
+        flex: 0;
+        visibility: hidden;
+    }
 }

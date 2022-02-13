@@ -12,10 +12,11 @@ const ROUTES = [
 	'chat',
 	'login',
 	'profile',
+	'edit-profile',
 ]
 
 app.get('/', (req, res) => {
-	res.render('index');
+	res.render('chat');
 });
 
 ROUTES.forEach(route => {

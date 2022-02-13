@@ -1,0 +1,75 @@
+.edit-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: inherit;
+  background: #FFFFFF;
+}
+.edit-user-other__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  width: 480px;
+}
+.edit-user-main__info-photo {
+  margin-bottom: 2rem;
+}
+.edit-user-main__info-photo_icon {
+  width: 160px;
+  height: 160px;
+  background: #000000;
+  border-radius: 50%;
+}
+.close_user-info {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 64px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+}
+.close_user-info:hover {
+  background: #EBEBEB;
+}
+.close_user-info:visited {
+  color: #000000;
+}
+.close_user-info:active {
+  background: #999999;
+}
+.edit-user-info-apply {
+  width: 480px;
+}
+.save-new-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #33c424;
+  width: inherit;
+  height: 36px;
+  border-radius: 6px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-bottom: 16px;
+  font-size: 16px;
+  padding: 0.25rem;
+  border: 0;
+  cursor: pointer;
+}
+.save-new-info:hover {
+  background: rgba(51, 196, 36, 0.9);
+}
+.save-new-info:active {
+  background: rgba(51, 196, 36);
+  outline: 3px solid rgba(51, 196, 36, 0.3);
+}

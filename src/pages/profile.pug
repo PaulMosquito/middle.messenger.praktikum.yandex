@@ -1,17 +1,25 @@
 doctype html
 html(lang="en")
   include ../components/chats/chats.pug
-  //- include ../components/layout/layout.pug
+  include ../components/lenta/lenta.pug
+  include ../components/userInfo/userInfo.pug
+
   head
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="style.css")
     style
       include style.css
 
-
     title message
   body
-    +chats({})
-    
+    div.page
+      
+      div.left-block
+        +chats()
+
+      div.right-block 
+        +userInfo()
+
     script(type="module", src="index.js")

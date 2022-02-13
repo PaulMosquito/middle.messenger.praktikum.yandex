@@ -1,22 +1,101 @@
-style
-    include chats.less
-
 include ../conversation/conversation.pug
 include ../modal/modal.pug
 include ../createChat/createChat.pug
 
+style
+    include chats.less
 
-mixin chats({ list=[] })
+-
+    const LIST = [
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 100},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 10},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 33},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 4},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 1},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Aaaa Aaa", lastMessage: "aaaa", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Bbbb Bbb", lastMessage: "bbbb", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Cccc Ccc", lastMessage: "cccc", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Dddd Ddd", lastMessage: "dddd", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Eeee Eee", lastMessage: "eeee", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Ffff Fff", lastMessage: "ffff", lastMessageDate: "", countUnreadMessages: 0},
+        {name: "Gggg Ggg", lastMessage: "gggg", lastMessageDate: "", countUnreadMessages: 0},
+    ]
+
+mixin chats()
     div.chats 
         div.chats__title
             a(class="chats__title__setting-button" href="/profile")
             input.chats__title__search(placeholder="Search")
 
         div.chats__list
-            +modal(["Profile", "Sign out"])
+            +modal([{href: '/profile',title: "Profile"}, {href:'/login',title: "Sign out"}])
                 
             +createChat()
-            each val in list
+            each val in LIST
                 +conversation(val)
             
 

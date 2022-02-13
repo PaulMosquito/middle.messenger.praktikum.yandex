@@ -9,6 +9,7 @@
   padding: 1rem 0;
   box-sizing: border-box;
   box-shadow: 0px 0px 15px #999999;
+  z-index: 2000;
 }
 .modal_top {
   margin: 1rem;
@@ -16,6 +17,11 @@
 .modal_bottom {
   bottom: 72px;
   right: 0;
+  margin: 0;
+}
+.modal_top_right {
+  right: 0;
+  top: 6rem;
   margin: 0;
 }
 .modal_row {
@@ -26,6 +32,10 @@
   height: 2.5rem;
   padding: 0 1rem;
   box-sizing: border-box;
+  text-decoration: none;
+}
+.modal_row:visited {
+  color: #000;
 }
 .modal_row:hover {
   background: rgba(0, 0, 0, 0.04);

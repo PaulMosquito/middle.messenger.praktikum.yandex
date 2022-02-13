@@ -1,7 +1,7 @@
 style
     include input.less
 
-mixin input({ name, type="text" })
+mixin input({ name, type="text", value })
     fieldset.input-form
-        input.input-form_input(placeholder=name type=type)
+        input.input-form_input(placeholder=name type=type value=value)
         legend.input-form_legend=name

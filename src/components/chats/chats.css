@@ -25,6 +25,7 @@
   color: black;
   padding: 0.25rem 1rem;
   border-radius: 8px;
+  outline: none;
 }
 .chats__title__search::placeholder {
   color: #999999;

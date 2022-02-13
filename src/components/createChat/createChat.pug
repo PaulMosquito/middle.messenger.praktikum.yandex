@@ -6,5 +6,5 @@ include ../modal/modal.pug
 mixin createChat(list=[])
 
     div.creating-chat
-        +modal(["Profile", "Sign out"], true)
+        +modal([{href: '/profile',title: "Profile"}, {href:'/login',title: "Sign out"}], 'bottom')
         button.create-button

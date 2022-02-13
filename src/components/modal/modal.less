@@ -11,7 +11,9 @@
     border-radius: 8px;    
     padding: 1rem 0;
     box-sizing: border-box;
-    box-shadow: 0px 0px 15px #999999;
+    box-shadow: 0px 0px 15px #999999;    
+    z-index: 2000;
+
 }
 
 .modal_top {
@@ -25,6 +27,13 @@
 
 }
 
+.modal_top_right {
+    right: 0;
+    top: 6rem;
+    margin: 0;
+}
+
+
 
 .modal_row {
     cursor: pointer;
@@ -34,6 +43,11 @@
     height: 2.5rem;
     padding: 0 1rem;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+.modal_row:visited {
+    color: #000;
 }
 
 .modal_row:hover {

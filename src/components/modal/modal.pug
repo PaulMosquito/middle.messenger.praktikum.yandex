@@ -1,10 +1,10 @@
 style
     include modal.less
 
-mixin modal(list=[], bottom)
-    div(class=bottom ? "modal modal_bottom" : "modal modal_top")
+mixin modal(list=[], position="top")
+    div(class=`modal modal_${position}`)
         each val in list
-            div.modal_row
+            a(class="modal_row" href=val.href)
                 div.modal__row__icon
-                div.modal__row__title=val
+                div.modal__row__title=val.title
                 

@@ -24,16 +24,16 @@
 
 .input-form_input::placeholder {
     color: gray;
-}
-.input-form_input:hover::placeholder {
-    color: #000000;
+    &:hover {
+        color: #000000;
+    }
+    &:focus-visible {
+        outline: 0;
+        border: 0;
+        border-bottom: 1px solid #3369F3;
+    }
 }
 
-.input-form_input:focus-visible {
-    outline: 0;
-    border: 0;
-    border-bottom: 1px solid #3369F3;
-}
 
 .input-form_input:not(:placeholder-shown) + .input-form_legend {
     visibility: visible;    

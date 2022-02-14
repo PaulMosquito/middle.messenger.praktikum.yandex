@@ -29,6 +29,7 @@
 .conversation-name-and-message__name {
   flex: 2;
   font-size: 16px;
+  font-weight: 600;
 }
 .conversation-name-and-message__message {
   flex: 3;
@@ -82,5 +83,6 @@
   .conversation-unread-message-and-date {
     flex: 0;
     visibility: hidden;
+    justify-content: center;
   }
 }

@@ -76,8 +76,11 @@
     position: absolute;
     top: 4rem;
     right: 4rem;
-    height: 64px;
-    width: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 34px;
     border-radius: 50%;
     border: 0;
     outline: 0;
@@ -86,16 +89,10 @@
     cursor: pointer;
     text-decoration: none;
     color: #000000;
-}
-
-.close_user-info:hover {
-    background: #EBEBEB;
-}
-
-.close_user-info:visited {
-    color: #000000;
-}
-
-.close_user-info:active {
-    background: #999999;
+    &:hover {
+        background: rgba(0,0,0,0.1);
+    }
+    &:active {
+        background: rgba(0,0,0,0.4);
+    }
 }

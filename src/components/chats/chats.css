@@ -6,20 +6,15 @@
   background: #FBFBFB;
 }
 .chats__title {
+  flex: 1;
   display: flex;
   justify-content: space-around;
   margin: 0 1rem;
   border-bottom: 1px solid #EAEAEA;
   padding: 1rem 0;
 }
-.chats__title__setting-button {
-  display: block;
-  width: 30px;
-  height: 30px;
-  background-color: #000000;
-}
 .chats__title__search {
-  width: 80%;
+  flex: 15;
   border: 0;
   background: #EFEFEF;
   color: black;
@@ -35,4 +30,10 @@
   overflow: hidden;
   overflow-y: scroll;
   width: inherit;
+}
+.creating-chat {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 16px;
 }

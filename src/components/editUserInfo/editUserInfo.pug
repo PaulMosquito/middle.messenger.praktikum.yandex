@@ -1,8 +1,9 @@
 include ../link/link.pug
 include ../input/input.pug
+include ../svg/svg.pug
 
 style
-    include editUserInfo.less
+    include editUserInfo.css
 
 mixin editUserInfo()
     .edit-user-info
@@ -19,4 +20,5 @@ mixin editUserInfo()
         .edit-user-info-apply            
             button.save-new-info="Apply"
 
-    a(class="close_user-info" href='/profile')="X"
+    a(class="close_user-info" href='/profile')
+        +svg({ icon: 'close' })

@@ -38,6 +38,9 @@
 }
 
 .lenta__header__logo__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 48px;
     width: 48px;
     border-radius: 50%;
@@ -48,6 +51,7 @@
     flex: 10;
     color: #000000;
     font-size: 16px;
+    font-weight: 600;
 }
 
 .lenta__header__setting {
@@ -80,26 +84,28 @@
     border-radius: 32px;
     z-index: 1000;
     overflow-wrap: anywhere;
+    &:hover,
+    &:active,
+    &:focus-visible {
+        border: 0;
+        outline: 0;
+    }
 }
 
 .type-message[contenteditable]:not(:placeholder-shown) {
     color: black;
 }
 
-.type-message[contenteditable]:hover,
-.type-message[contenteditable]:active,
-.type-message[contenteditable]:focus-visible {
-    border: 0;
-    outline: 0;
-}
 
 .type-message[contenteditable]:empty::before {
   content: "Message";
   color: #999999;
 }
 
-
 .send-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 44px;
     height: 44px;
     background: #3369F3;  

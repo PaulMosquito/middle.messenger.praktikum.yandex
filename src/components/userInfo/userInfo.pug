@@ -1,7 +1,7 @@
 include ../link/link.pug
 
 style
-    include userInfo.less
+    include userInfo.css
 
 mixin userInfo()
     .user-info
@@ -31,4 +31,5 @@ mixin userInfo()
             +link({href: "/change-password", title: "Change password"})
             +link({href: "/login", title: "Sign Out"})
 
-    a(class="close_user-info" href='/')="X"
+    a(class="close_user-info" href='/')
+        +svg({ icon: 'close' })

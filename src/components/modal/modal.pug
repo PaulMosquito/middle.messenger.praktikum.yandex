@@ -1,10 +1,13 @@
-style
-    include modal.less
+include ../svg/svg.pug
 
-mixin modal(list=[], position="top")
-    div(class=`modal modal_${position}`)
+style
+    include modal.css
+
+mixin modal({ id, list=[], position="top" })
+    div(id=id class=`modal modal_${position}`)
         each val in list
             a(class="modal_row" href=val.href)
                 div.modal__row__icon
+                    +svg({ width: "22px", height: "22px", icon: val.icon })
                 div.modal__row__title=val.title
                 

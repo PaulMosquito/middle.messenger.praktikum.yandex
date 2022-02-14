@@ -23,10 +23,10 @@
 .input-form_input::placeholder {
   color: gray;
 }
-.input-form_input:hover::placeholder {
+.input-form_input::placeholder:hover {
   color: #000000;
 }
-.input-form_input:focus-visible {
+.input-form_input::placeholder:focus-visible {
   outline: 0;
   border: 0;
   border-bottom: 1px solid #3369F3;

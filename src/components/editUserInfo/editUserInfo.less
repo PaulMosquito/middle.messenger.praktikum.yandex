@@ -28,11 +28,14 @@
 
 
 .close_user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 4rem;
     right: 4rem;
-    height: 64px;
-    width: 64px;
+    height: 34px;
+    width: 34px;
     border-radius: 50%;
     border: 0;
     outline: 0;
@@ -41,18 +44,12 @@
     cursor: pointer;
     text-decoration: none;
     color: #000000;
-}
-
-.close_user-info:hover {
-    background: #EBEBEB;
-}
-
-.close_user-info:visited {
-    color: #000000;
-}
-
-.close_user-info:active {
-    background: #999999;
+    &:hover {
+        background: rgba(0,0,0,0.1);
+    }
+    &:active {
+        background: rgba(0,0,0,0.4);
+    }
 }
 
 .edit-user-info-apply {
@@ -74,14 +71,11 @@
     padding: 0.25rem;
     border: 0;
     cursor: pointer;
-}
-
-
-.save-new-info:hover {
-    background: rgba(51, 196, 36, 0.9);
-}
-
-.save-new-info:active {
-    background: rgba(51, 196, 36);
-    outline: 3px solid rgba(51, 196, 36, 0.3);
+    &:hover {
+        background: rgba(51, 196, 36, 0.9);
+    }
+    &:active {
+        background: rgba(51, 196, 36);
+        outline: 3px solid rgba(51, 196, 36, 0.3);
+    }
 }

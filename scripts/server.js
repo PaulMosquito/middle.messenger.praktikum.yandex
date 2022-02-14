@@ -15,6 +15,8 @@ const ROUTES = [
 	'edit-profile',
 ]
 
+app.use(express.static('src'));
+
 app.get('/', (req, res) => {
 	res.render('chat');
 });

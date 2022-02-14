@@ -1,8 +1,11 @@
-style
-    include lenta.less
-
-include ../message/message.pug
 include ../modal/modal.pug
+include ../modalButton/modalButton.pug
+include ../message/message.pug
+include ../svg/svg.pug
+
+style
+    include lenta.css
+
 
 - const CONVERSATION = [{ isMe: true, date: "11:56", message:"A" }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dicta." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime laborum sunt iure, ad sit maiores magni nesciunt, veniam provident non aut dolorum nihil, asperiores amet aspernatur ducimus modi incidunt! Eaque!" }, { isMe: false, date: "11:56", message:"Lorem, ipsum dolor." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dicta." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime laborum sunt iure, ad sit maiores magni nesciunt, veniam provident non aut dolorum nihil, asperiores amet aspernatur ducimus modi incidunt! Eaque!" }, { isMe: true, date: "11:56", message:"Lorem, ipsum dolor." },{ isMe: true, date: "11:56", message:"A" }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dicta." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime laborum sunt iure, ad sit maiores magni nesciunt, veniam provident non aut dolorum nihil, asperiores amet aspernatur ducimus modi incidunt! Eaque!" }, { isMe: false, date: "11:56", message:"Lorem, ipsum dolor." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dicta." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime laborum sunt iure, ad sit maiores magni nesciunt, veniam provident non aut dolorum nihil, asperiores amet aspernatur ducimus modi incidunt! Eaque!" }, { isMe: true, date: "11:56", message:"Lorem, ipsum dolor." }, { isMe: true, date: "11:56", message:"A" }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dicta." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime laborum sunt iure, ad sit maiores magni nesciunt, veniam provident non aut dolorum nihil, asperiores amet aspernatur ducimus modi incidunt! Eaque!" }, { isMe: false, date: "11:56", message:"Lorem, ipsum dolor." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dicta." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime laborum sunt iure, ad sit maiores magni nesciunt, veniam provident non aut dolorum nihil, asperiores amet aspernatur ducimus modi incidunt! Eaque!" }, { isMe: true, date: "11:56", message:"Lorem, ipsum dolor." },{ isMe: true, date: "11:56", message:"A" }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dicta." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime laborum sunt iure, ad sit maiores magni nesciunt, veniam provident non aut dolorum nihil, asperiores amet aspernatur ducimus modi incidunt! Eaque!" }, { isMe: false, date: "11:56", message:"Lorem, ipsum dolor." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet." }, { isMe: true, date: "11:56", message:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dicta." }, { isMe: false, date: "11:56", message:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime laborum sunt iure, ad sit maiores magni nesciunt, veniam provident non aut dolorum nihil, asperiores amet aspernatur ducimus modi incidunt! Eaque!" }, { isMe: true, date: "11:56", message:"Lorem, ipsum dolor." }]
 
@@ -12,11 +15,15 @@ mixin lenta()
         div.lenta__header
             div.lenta__header__logo
                 div.lenta__header__logo__image
-            div.lenta__header__name="Jordan"
-            div.lenta__header__setting
-                +modal([{href: '/profile',title: "Delete chat"}], "top_right")
+            div.lenta__header__name="Jordan"            
+            +modalButton({
+                id: "setting-lenta",
+                position: 'top-left',
+                icon: "setting_dots",
+                list: [{href: '/profile', title: "Delete chat", icon: "basket"}]
+            })
 
-        div.lenta__conversation
+        div#lenta-conversation.lenta__conversation
             each val in CONVERSATION
                 +message(val)
 
@@ -24,4 +31,6 @@ mixin lenta()
             div(class="type-message" contenteditable=true)
             
             div(class="send-message")
+                +svg({ width: "12px", height: "12px", icon:"arrow" })
 
+    script(type="module" src="../components/lenta/lenta.js")

@@ -1,8 +1,13 @@
+@font-face {
+  font-family: Inter;
+  src: url(../font/Inter-Regular.ttf);
+}
 html,
 body {
   height: 100%;
   font-size: 13px;
   overflow: hidden;
+  font-family: Inter;
 }
 body {
   margin: 0;

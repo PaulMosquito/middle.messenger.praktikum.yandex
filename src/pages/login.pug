@@ -1,25 +1,15 @@
-doctype html
-html(lang="en")
+extends index.pug
+
+block content 
   include ../components/input/input.pug
   include ../components/title/title.pug
   include ../components/link/link.pug
-  
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    style
-      include style.css
 
-    title message
-  body
-    div.sign-in
-      div.sign-in__wrapper
-        +title({ value: "WHO A U?", center: true })
-        div.form-input
-          +input({ name: "Login" })
-          +input({ name: "Password", type: "password" })
-        +link({href: "/chat", title: "Sign in", isButton: true})
-        +link({href: "/auth", title: "Sign up"})
-
-    script(type="module", src="index.js")
+  div.sign-in
+    div.sign-in__wrapper
+      +title({ value: "WHO A U?", center: true })
+      div.form-input
+        +input({ name: "Login" })
+        +input({ name: "Password", type: "password" })
+      +link({href: "/chat", title: "Sign in", isButton: true})
+      +link({href: "/auth", title: "Sign up"})

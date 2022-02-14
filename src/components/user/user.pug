@@ -1,0 +1,10 @@
+style
+    include user.css
+
+mixin userInfo()
+    .user-info
+        block content
+
+
+    a(class="close_user-info" href='/')
+        +svg({ icon: 'close' })

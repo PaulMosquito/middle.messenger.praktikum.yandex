@@ -1,51 +1,16 @@
-.edit-user-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: inherit;
-  background: #FFFFFF;
-}
-.edit-user-other__info {
+.user-other__info {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 2rem;
   width: 480px;
 }
-.edit-user-main__info-photo {
-  margin-bottom: 2rem;
-}
 .edit-user-main__info-photo_icon {
   width: 160px;
   height: 160px;
   background: #000000;
   border-radius: 50%;
-}
-.close_user-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 4rem;
-  right: 4rem;
-  height: 34px;
-  width: 34px;
-  border-radius: 50%;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  font-size: 64px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #000000;
-}
-.close_user-info:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-.close_user-info:active {
-  background: rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
 }
 .edit-user-info-apply {
   width: 480px;

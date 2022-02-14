@@ -1,35 +1,31 @@
-include ../link/link.pug
+extends ../user/user.pug
 
-style
-    include userInfo.css
+block content
+    style
+        include userInfo.css
+    include ../link/link.pug
 
-mixin userInfo()
-    .user-info
-        .user-main__info
-            .user-main__info-photo
-                .user-main__info-photo_icon
+    .user-main__info
+        .user-main__info-photo_icon
 
-            .user-main__info-block
-                .user-main__info-names
-                    .first_name="Dsadpsa"
-                    .second_name="Kdsadsaew"
+        .user-main__info-block
+            .user-main__info-names
+                .first_name="Dsadpsa"
+                .second_name="Kdsadsaew"
 
-                .user-main__info-login
-                    .user-main__info-login_login="dsassdsa"
+            .user-main__info-login
+                .user-main__info-login_login="dsassdsa"
 
-        .user-other__info
-            .field
-                .field_name="mail"
-                .field_value="dsads@yandex.ru"
+    .user-other__info
+        .field
+            .field_name="mail"
+            .field_value="dsads@yandex.ru"
 
-            .field
-                .field_name="phone"
-                .field_value="+7(910)-103-22-43"
+        .field
+            .field_name="phone"
+            .field_value="+7(910)-103-22-43"
 
-        .user-info-setting
-            +link({href: "/edit-profile", title: "Edit profile"})
-            +link({href: "/change-password", title: "Change password"})
-            +link({href: "/login", title: "Sign Out"})
-
-    a(class="close_user-info" href='/')
-        +svg({ icon: 'close' })
+    .user-info-setting
+        +link({href: "/edit-profile", title: "Edit profile"})
+        +link({href: "/change-password", title: "Change password"})
+        +link({href: "/login", title: "Sign Out"})

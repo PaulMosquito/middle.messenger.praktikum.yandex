@@ -8,30 +8,33 @@
   padding: 8px 0;
   box-sizing: border-box;
 }
-.conversation-logo {
+.conversation__logo {
   flex: 4;
   min-width: 55px;
   padding-right: 16px;
 }
-.conversation-logo_icon {
+.conversation__logo__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 55px;
   width: 55px;
   border-radius: 50%;
-  background: #000000;
+  background: #EFEFEF;
 }
-.conversation-name-and-message {
+.conversation__name-and-message {
   flex: 16;
   width: 230px;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-.conversation-name-and-message__name {
+.conversation__name-and-message__name {
   flex: 2;
   font-size: 16px;
   font-weight: 600;
 }
-.conversation-name-and-message__message {
+.conversation__name-and-message__message {
   flex: 3;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -45,7 +48,7 @@
   font-size: 13px;
   color: #999999;
 }
-.conversation-unread-message-and-date {
+.conversation__unread-message-and-date {
   flex: 2;
   font-size: 11px;
   display: flex;
@@ -54,17 +57,17 @@
   justify-content: center;
   height: 100%;
 }
-.conversation-unread-message-and-date__date {
+.conversation__unread-message-and-date__date {
   flex: 1;
   color: #999999;
 }
-.conversation-unread-message-and-date__unread-messages {
+.conversation__unread-message-and-date__unread-messages {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 2;
 }
-.conversation-unread-message-and-date__unread-messages__count {
+.conversation__unread-message-and-date__unread-messages__count {
   color: #FFFFFF;
   background: #3369F3;
   height: 22px;
@@ -79,8 +82,7 @@
     width: 55px;
     box-sizing: border-box;
   }
-  .conversation-name-and-message,
-  .conversation-unread-message-and-date {
+  .conversation__name-and-message .conversation__unread-message-and-date {
     flex: 0;
     visibility: hidden;
     justify-content: center;

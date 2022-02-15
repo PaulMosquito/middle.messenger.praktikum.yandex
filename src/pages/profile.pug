@@ -1,12 +1,12 @@
 extends index.pug
 
 block content 
-  include ../components/chats/chats.pug
-  include ../components/userInfo/userInfo.pug
+  include ../modules/chats/chats.pug
+  include ../modules/user/user.pug
 
   div.page      
     div.left-block
       +chats()
 
-    div.right-block
-      +userInfo()
+    div.right-block.right-block__center
+      +user()

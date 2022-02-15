@@ -1,4 +1,4 @@
-include ../conversation/conversation.pug
+include ../../components/conversation/conversation.pug
 include ../modalButton/modalButton.pug
 
 style
@@ -96,9 +96,8 @@ mixin chats()
             })
             input.chats__title__search(placeholder="Search")
 
-        div.chats__list
-                
-            div.creating-chat
+        div.chats__list                
+            div.chats__list__creating-chat
                 +modalButton({
                     id: "creating-chat",
                     isCreatingChat: true,
@@ -110,4 +109,4 @@ mixin chats()
             each val in LIST
                 +conversation(val)                   
 
-    script(type="module" src="../components/modalButton/modalButton.js")
+    script(type="module" src="../modules/modalButton/modalButton.js")

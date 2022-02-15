@@ -1,13 +1,15 @@
 
-.message__right {
-    display: flex;
-    justify-content: flex-end;
+.message {
+    &_right {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &_left {
+        display: flex;
+        justify-content: flex-start;
+    }
 }
 
-.message__left {
-    display: flex;
-    justify-content: flex-start;
-}
 
 .other-message,
 .my-message {
@@ -35,9 +37,6 @@
 .other-message {
     background: #F8F8F8;
     border-radius: 12px 12px 12px 0;
-}
-
-.message-text {
 }
 
 .message-time {

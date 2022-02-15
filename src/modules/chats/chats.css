@@ -31,7 +31,7 @@
   overflow-y: scroll;
   width: inherit;
 }
-.creating-chat {
+.chats__list__creating-chat {
   position: absolute;
   bottom: 0;
   right: 0;

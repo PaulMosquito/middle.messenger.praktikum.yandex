@@ -1,0 +1,12 @@
+include ../input/input.pug
+
+style
+    include editableForm.css
+
+mixin editableForm({ id, name='', value='', edit })
+    if edit
+        +input({ id, name, value })
+    else
+        .editable-form
+            .editable-form__name=name
+            .editable-form__value=value

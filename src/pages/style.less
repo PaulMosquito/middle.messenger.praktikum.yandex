@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: Inter;
-    src: url(../font/Inter-Regular.ttf);    
+    src: url(../../font/Inter-Regular.ttf);    
 }
 
 html, body {
@@ -23,22 +23,6 @@ body {
     background: @primary;
 }
 
-.sign-in,
-.sign-up {
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 600px;
-    padding-top: 12rem;    
-}
-
-
-.sign-in__wrapper,
-.sign-up__wrapper {
-    width: 480px;
-}
-
 .page {
     height: 100%;
     display: flex;;
@@ -50,8 +34,12 @@ body {
 
 .right-block {
     flex: 10;
+    
+    &__center {
+        flex: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.form-input {
-    margin-bottom: 32px;
-}

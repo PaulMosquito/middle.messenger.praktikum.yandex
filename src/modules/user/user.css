@@ -1,0 +1,79 @@
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 480px;
+  background: #FFFFFF;
+}
+.user-info__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: #EFEFEF;
+  margin-bottom: 2rem;
+}
+.user-info__photo__sekeleton {
+  transform: scale(1.4);
+}
+.user-info__main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  width: inherit;
+}
+.user-info__buttons {
+  width: inherit;
+}
+.user-info__buttons__save-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: 36px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.25rem;
+  margin-bottom: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 16px;
+  background: #33c424;
+}
+.user-info__buttons__save-button:hover {
+  background: rgba(51, 196, 36, 0.9);
+}
+.user-info__buttons__save-button:active {
+  background: rgba(51, 196, 36);
+  outline: 3px solid rgba(51, 196, 36, 0.3);
+}
+.user-info__close {
+  cursor: pointer;
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  font-size: 64px;
+  text-decoration: none;
+  color: #000000;
+  background: transparent;
+}
+.user-info__close:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.user-info__close:active {
+  background: rgba(0, 0, 0, 0.4);
+}

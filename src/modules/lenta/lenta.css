@@ -3,8 +3,8 @@
   flex-direction: column;
   height: 100%;
 }
-.lenta__header,
-.lenta__footer {
+.lenta header,
+.lenta footer {
   flex: 1;
   display: flex;
   align-items: center;
@@ -21,10 +21,6 @@
   border-bottom: 1px solid #EAEAEA;
   padding: 12px 0.5rem;
 }
-.lenta__footer {
-  padding: 22px 0.5rem;
-  border-top: 1px solid #EAEAEA;
-}
 .lenta__header__logo {
   width: 48px;
   height: 48px;
@@ -37,18 +33,13 @@
   height: 48px;
   width: 48px;
   border-radius: 50%;
-  background: #000000;
+  background: #EFEFEF;
 }
 .lenta__header__name {
   flex: 10;
   color: #000000;
   font-size: 16px;
   font-weight: 600;
-}
-.lenta__header__setting {
-  width: 48px;
-  height: 48px;
-  background: #000000;
 }
 .lenta__conversation {
   display: flex;
@@ -58,6 +49,10 @@
   overflow: hidden;
   overflow-y: scroll;
   flex: 20;
+}
+.lenta__footer {
+  padding: 22px 0.5rem;
+  border-top: 1px solid #EAEAEA;
 }
 .type-message[contenteditable] {
   flex: 10;
@@ -92,15 +87,4 @@
   height: 44px;
   background: #3369F3;
   border-radius: 50%;
-}
-@media only screen and (max-width: 680px) {
-  .conversation {
-    width: 55px;
-    box-sizing: border-box;
-  }
-  .conversation-name-and-message,
-  .conversation-unread-message-and-date {
-    flex: 0;
-    visibility: hidden;
-  }
 }

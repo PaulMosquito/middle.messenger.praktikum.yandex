@@ -10,23 +10,21 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 15px #999999;
   z-index: 2000;
+  margin: 0;
 }
 .modal_top {
   top: 5rem;
   left: 1rem;
-  margin: 0;
 }
 .modal_top-left {
   top: 7rem;
   right: 0;
-  margin: 0;
 }
 .modal_bottom {
   bottom: 5rem;
   right: 0;
-  margin: 0;
 }
-.modal_row {
+.modal__row {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -36,13 +34,13 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-.modal_row:visited {
-  color: #000;
+.modal__row:visited {
+  color: #000000;
 }
-.modal_row:hover {
+.modal__row:hover {
   background: rgba(0, 0, 0, 0.04);
 }
-.modal_row:active {
+.modal__row:active {
   background: rgba(0, 0, 0, 0.08);
 }
 .modal__row__icon {

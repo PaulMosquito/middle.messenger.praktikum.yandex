@@ -1,15 +1,17 @@
 extends index.pug
 
 block content 
-  include ../components/input/input.pug
-  include ../components/title/title.pug
-  include ../components/link/link.pug
+  include ../modules/loginForm/loginForm.pug 
 
-  div.sign-in
-    div.sign-in__wrapper
-      +title({ value: "WHO A U?", center: true })
-      div.form-input
-        +input({ name: "Login" })
-        +input({ name: "Password", type: "password" })
-      +link({href: "/chat", title: "Sign in", isButton: true})
-      +link({href: "/auth", title: "Sign up"})
+  +loginForm({
+    title: { value: "WHO A U?", center: true },
+    inputs: [
+      { name: "Login" },
+      { name: "Password", type: "password" },
+    ],
+    links: [
+      {href: "/chat", title: "Sign in", isButton: true},
+      {href: "/auth", title: "Sign up"}
+    ]
+  })
+  

@@ -1,19 +1,17 @@
 style
     include conversation.css
 
-
 mixin conversation({ name, lastMessage, lastMessageDate, countUnreadMessages })
     div.conversation 
-        div.conversation-logo
-            div.conversation-logo_icon
+        div.conversation__logo
+            div.conversation__logo__icon
+                    
+        div.conversation__name-and-message
+            div.conversation__name-and-message__name=name
+            div.conversation__name-and-message__message=lastMessage
 
-
-        div.conversation-name-and-message
-            div.conversation-name-and-message__name=name
-            div.conversation-name-and-message__message=lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage+lastMessage
-
-        div.conversation-unread-message-and-date
-            div.conversation-unread-message-and-date__date="00:00"
+        div.conversation__unread-message-and-date
+            div.conversation__unread-message-and-date__date="00:00"
             if countUnreadMessages > 0 
-                div.conversation-unread-message-and-date__unread-messages
-                    div.conversation-unread-message-and-date__unread-messages__count=countUnreadMessages > 99 ? "99+" : countUnreadMessages 
+                div.conversation__unread-message-and-date__unread-messages
+                    div.conversation__unread-message-and-date__unread-messages__count=countUnreadMessages > 99 ? "99+" : countUnreadMessages 

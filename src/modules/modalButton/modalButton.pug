@@ -1,5 +1,5 @@
-include ../modal/modal.pug
-include ../svg/svg.pug
+include ../../components/modal/modal.pug
+include ../../components/svg/svg.pug
 
 style 
     include modalButton.css
@@ -8,10 +8,9 @@ style
 mixin modalButton({ id, icon="", isCreatingChat, list, position })    
     button(
         id=`${id}-button`,
-        class=`modal-button ${isCreatingChat ? 'modal-button_creating-chat' : 'modal-button_icon'}`,
+        class=`modal-button ${isCreatingChat ? 'modal-button__creating-chat' : 'modal-button__icon'}`,
         onclick=`handleOpenModal(${id})`)
         if icon
-            div.icon
-                +svg({ icon })                
+            +svg({ icon })                
         if list
             +modal({ id, list, position })

@@ -1,20 +1,22 @@
 extends index.pug
 
 block content 
-  include ../components/input/input.pug
-  include ../components/title/title.pug
-  include ../components/link/link.pug 
+  include ../modules/loginForm/loginForm.pug 
 
-  div.sign-up
-    div.sign-up__wrapper
-      +title({ value: "LET'S TALK ABOUT YOURSELF", center: true })
-      div.form-input
-        +input({ name: "Name" })
-        +input({ name: "Last Name" })
-        +input({ name: "Login" })
-        +input({ name: "Mail" })
-        +input({ name: "Phone number" })
-        +input({ name: "Password", type: "password" })
-        +input({ name: "Repeat password", type: "password" })
-      +link({href: "/chat", title: "Let's go!", isButton: true})
-      +link({href: "/login", title: "Sign in"})
+  +loginForm({
+    title: { value: "LET'S TALK ABOUT YOURSELF", center: true },
+    inputs: [
+      { name: "Name" },
+      { name: "Last Name" },
+      { name: "Login" },
+      { name: "Mail" },
+      { name: "Phone number" },
+      { name: "Password", type: "password" },
+      { name: "Repeat password", type: "password" }
+    ],
+    links: [
+      {href: "/chat", title: "Let's go!", isButton: true},
+      {href: "/login", title: "Sign in"}
+    ]
+  })
+  

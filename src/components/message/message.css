@@ -1,8 +1,8 @@
-.message__right {
+.message_right {
   display: flex;
   justify-content: flex-end;
 }
-.message__left {
+.message_left {
   display: flex;
   justify-content: flex-start;
 }

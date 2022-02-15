@@ -15,4 +15,4 @@
 
 ## Ссылка на развернутый проект
 
-[https://angry-payne-e0db26.netlify.app/](https://angry-payne-e0db26.netlify.app/)
+[https://mesej.netlify.app](https://mesej.netlify.app)

@@ -2,11 +2,14 @@
   "name": "messenger",
   "version": "1.0.0",
   "description": "project for yandex praktikum",
-  "main": "index.html",
+  "main": "unrelated.js",
+  "targets": {
+    "main": false
+  },
   "scripts": {
     "test": "test",
     "start": "node scripts/server.js",
-    "build": "parcel build src/pages/index.pug"
+    "build": "parcel build --no-cache src/pages/index.pug"
   },
   "repository": {
     "type": "git",

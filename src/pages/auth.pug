@@ -1,4 +1,4 @@
-extends index.pug
+extends layout.pug
 
 block content 
   include ../modules/loginForm/loginForm.pug 
@@ -16,7 +16,7 @@ block content
     ],
     links: [
       {href: "/chat", title: "Let's go!", isButton: true},
-      {href: "/login", title: "Sign in"}
+      {href: "/", title: "Sign in"}
     ]
   })
   

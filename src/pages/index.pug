@@ -1,16 +1,17 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        style
-            include style.css
+extends layout.pug
 
-        title message
+block content 
+  include ../modules/loginForm/loginForm.pug 
 
-    body
-        block content                         
-
-    
-    
+  +loginForm({
+    title: { value: "WHO A U?", center: true },
+    inputs: [
+      { name: "Login" },
+      { name: "Password", type: "password" },
+    ],
+    links: [
+      {href: "/chat", title: "Sign in", isButton: true},
+      {href: "/auth", title: "Sign up"}
+    ]
+  })
+  

@@ -8,11 +8,11 @@ app.set('view engine', 'pug')
 app.set('views', path.resolve("src/pages"));
 
 const ROUTES = [
-	'auth',
-	'chat',
+	'auth.pug',
+	'chat.pug',
 	'index',
-	'profile',
-	'edit-profile',
+	'profile.pug',
+	'edit-profile.pug',
 ]
 
 app.use(express.static('src'));

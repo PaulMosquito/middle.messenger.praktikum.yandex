@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+  include ../modules/chats/chats.pug
+  include ../modules/user/user.pug
+
+  div.page
+    
+    div.left-block
+      +chats()
+
+    div.right-block.right-block__center 
+      +user(true)

@@ -1,0 +1,90 @@
+.lenta {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.lenta header,
+.lenta footer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 54px;
+  margin: 0 4.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  height: fit-content;
+  background: #FFFFFF;
+}
+.lenta__header {
+  position: relative;
+  border-bottom: 1px solid #EAEAEA;
+  padding: 12px 0.5rem;
+}
+.lenta__header__logo {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+}
+.lenta__header__logo__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  background: #EFEFEF;
+}
+.lenta__header__name {
+  flex: 10;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+}
+.lenta__conversation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 4rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  flex: 20;
+}
+.lenta__footer {
+  padding: 22px 0.5rem;
+  border-top: 1px solid #EAEAEA;
+}
+.type-message[contenteditable] {
+  flex: 10;
+  display: inline-block;
+  font-size: 16px;
+  background: #EFEFEF;
+  width: inherit;
+  margin-right: 1rem;
+  padding: 1rem 1.75rem;
+  border-radius: 32px;
+  z-index: 1000;
+  overflow-wrap: anywhere;
+}
+.type-message[contenteditable]:hover,
+.type-message[contenteditable]:active,
+.type-message[contenteditable]:focus-visible {
+  border: 0;
+  outline: 0;
+}
+.type-message[contenteditable]:not(:placeholder-shown) {
+  color: black;
+}
+.type-message[contenteditable]:empty::before {
+  content: "Message";
+  color: #999999;
+}
+.send-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #3369F3;
+  border-radius: 50%;
+}

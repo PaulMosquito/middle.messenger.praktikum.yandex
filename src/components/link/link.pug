@@ -1,0 +1,5 @@
+style
+    include link.css
+
+mixin link({ href, title, isButton })
+    a(href=href class=isButton ? "link-button-component" : "link-component")=title

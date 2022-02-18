@@ -1,0 +1,38 @@
+.input-form {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    width: inherit;
+    margin-bottom: 16px;
+
+    &__input {
+        width: 100%;
+        box-sizing: border-box;
+        outline: 0;
+        border: 0;
+        border-bottom: 1px solid rgb(51, 105, 243);
+        padding: 4px 0;
+        font-size: 16px;
+    }
+    &__input::placeholder {
+        color: gray;
+        &:hover {
+            color: #000000;
+        }
+        &:focus-visible {
+            outline: 0;
+            border: 0;
+            border-bottom: 1px solid #3369F3;
+        }
+    }
+    &__input:not(:placeholder-shown) + &__legend {
+        visibility: visible;
+    }
+
+    &__legend {
+        visibility: hidden;
+        color: #999999;
+        padding: 0;
+        font-size: 13px;
+    }
+}

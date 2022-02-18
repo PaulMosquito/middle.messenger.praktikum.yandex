@@ -1,0 +1,39 @@
+.message_right {
+  display: flex;
+  justify-content: flex-end;
+}
+.message_left {
+  display: flex;
+  justify-content: flex-start;
+}
+.other-message,
+.my-message {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 500px;
+  min-width: 36px;
+  width: fit-content;
+  min-height: 16px;
+  height: auto;
+  padding: 12px;
+  margin: 0 1rem 1rem 1rem;
+}
+.other-message:first-of-type,
+.my-message:first-of-type {
+  margin-top: 1rem;
+}
+.my-message {
+  background: #E4EDFD;
+  border-radius: 12px 12px 0 12px;
+}
+.other-message {
+  background: #F8F8F8;
+  border-radius: 12px 12px 12px 0;
+}
+.message-time {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  font-size: 11px;
+}

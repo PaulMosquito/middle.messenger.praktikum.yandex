@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+  font-size: 13px;
+  overflow: hidden;
+  font-family: Inter;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #1E1E1E;
+  background: #FFFFFF;
+}
+.page {
+  height: 100%;
+  display: flex;
+}
+.left-block {
+  flex: 3;
+}
+.right-block {
+  flex: 10;
+}
+.right-block__center {
+  flex: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,13 @@
+include ../svg/svg.pug
+
+style
+    include modal.css
+
+mixin modal({ id, list=[], position="top" })
+    div(id=id class=`modal modal_${position}`)
+        each val in list
+            a(class="modal__row" href=val.href)
+                div.modal__row__icon
+                    +svg({ width: "22px", height: "22px", icon: val.icon })
+                span=val.title
+                

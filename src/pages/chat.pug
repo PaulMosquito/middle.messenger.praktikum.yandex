@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content 
+  include ../modules/chats/chats.pug
+  include ../modules/lenta/lenta.pug
+  
+  div.page      
+    div.left-block
+      +chats()
+
+    div.right-block
+      +lenta()
+  

@@ -1,0 +1,14 @@
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 600px;
+  padding-top: 12rem;
+}
+.login-form__wrapper {
+  width: 480px;
+}
+.login-form__wrapper__inputs {
+  margin-bottom: 32px;
+}

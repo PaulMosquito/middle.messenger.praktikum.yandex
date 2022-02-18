@@ -1,0 +1,5 @@
+style
+    include title.css
+
+mixin title({ value, center=false })
+    div(class= center? "title title_center" : "title")=value

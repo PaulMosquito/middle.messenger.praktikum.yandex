@@ -1,3 +1,6 @@
+## PR для ревью
+https://github.com/PaulMosquito/middle.messenger.praktikum.yandex/pull/1
+
 ## Описание
 
 Учебный проект яндекс.практикума
@@ -16,3 +19,4 @@
 ## Ссылка на развернутый проект
 
 [https://mesej.netlify.app](https://mesej.netlify.app)
+

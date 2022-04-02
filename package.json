@@ -9,6 +9,7 @@
   "scripts": {
     "test": "test",
     "lint": "eslint ./src/**/*.js --fix",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
     "start": "node scripts/server.js",
     "build": "parcel build --no-cache src/pages/index.pug"
   },
@@ -30,6 +31,12 @@
     "express": "4.17.2",
     "less": "4.1.2",
     "parcel": "2.2.1",
+    "postcss-less": "^6.0.0",
+    "stylelint": "^14.6.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-less": "^1.0.4",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-less": "^1.0.5",
     "typescript": "^4.6.3"
   }
 }

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "test",
+    "lint": "eslint ./src/**/*.js --fix",
     "start": "node scripts/server.js",
     "build": "parcel build --no-cache src/pages/index.pug"
   },
@@ -23,6 +24,9 @@
   "homepage": "https://github.com/PaulMosquito/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
     "@parcel/transformer-pug": "2.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
     "express": "4.17.2",
     "less": "4.1.2",
     "parcel": "2.2.1",

@@ -1,11 +1,12 @@
 import Block from '../../core/Block';
-import { Title, Input, Link } from '../';
+import { Title, Input, Link, List } from '../';
 import './loginForm.css';
 
 class LoginForm extends Block {
 	constructor(props) {
-		const Inputs = props.inputs.map(inputProps => new Input(inputProps));
-		const Links = props.links.map(linkProps => new Link(linkProps));
+
+		const Inputs = new List({ items: props.inputs.map(inputProps => new Input(inputProps)), name: 'Inputs' });
+		const Links = new List({ items: props.links.map(inputProps => new Link(inputProps)), name: 'Links' });
 
 		super({
 			...props,

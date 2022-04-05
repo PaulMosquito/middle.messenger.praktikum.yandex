@@ -102,7 +102,7 @@
 		"comma-style": 2,
 		"default-case": 2,
 		"func-call-spacing": 2,
-		"max-len": ["error", { "code": 90 }],
+		"max-len": ["error", { "code": 190 }],
 		"no-console": 2,
 		"no-else-return": 2,
 		"no-whitespace-before-property": 2,

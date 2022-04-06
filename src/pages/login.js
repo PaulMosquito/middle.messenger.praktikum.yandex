@@ -1,7 +1,5 @@
 import Block from '../core/Block';
 import { LoginForm } from '../components';
-import './style.css';
-
 
 class LoginPage extends Block {
 	constructor(props) {
@@ -14,8 +12,8 @@ class LoginPage extends Block {
 					{ name: 'Password', type: 'password' }
 				],
 				links: [
-					{href: './chat.pug', title: 'Sign in', isButton: true},
-					{href: './auth.pug', title: 'Sign up'}
+					{href: '/chat', title: 'Sign in', isButton: true},
+					{href: '/auth', title: 'Sign up'}
 				]
 			})
 		});

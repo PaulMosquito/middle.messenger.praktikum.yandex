@@ -151,10 +151,13 @@ export default class Block {
 		const fragment = this._createDocumentElement('template');
 
 
+
 		fragment.innerHTML = pug.render(template.replaceAll('    ', '\t').replaceAll('\n\t\t\t', '\n'), propsAndStubs);
 
 
 		Object.values(this.children).forEach(child => {
+
+			console.log(fragment.content, child);
 			const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
 
 			stub.replaceWith(child.getContent());

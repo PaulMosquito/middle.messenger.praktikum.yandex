@@ -27,13 +27,13 @@ class ModalButton extends Block {
 		const { id, icon='', isCreatingChat, list } = this.props;
 
 		return this.compile(`
-			button( id=id, class=class, onclick=onclick )
+			button( id=id, class=className, onclick=onclick )
 				if icon
 					#{SVG}
 				if list
 					#{Modal}
         `, {
-			class: `modal-button ${isCreatingChat ? 'modal-button__creating-chat' : 'modal-button__icon'}`,
+			className: `modal-button ${isCreatingChat ? 'modal-button__creating-chat' : 'modal-button__icon'}`,
 			icon,
 			id: `${id}-button`,
 			list,

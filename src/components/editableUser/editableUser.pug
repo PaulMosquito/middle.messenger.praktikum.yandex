@@ -5,7 +5,7 @@ include ../editableForm/editableForm.pug
 style
     include user.css
 
-mixin user(edit)
+mixin user()
     .user-info
         .user-info__photo
             .user-info__photo__sekeleton
@@ -18,14 +18,10 @@ mixin user(edit)
             +editableForm({ id: "mail", name: "Mail",  value: "dsads@yandex.r", edit})
             +editableForm({ id: "phone-number", name: "Phone number", value: "+79101032243", edit })
 
-        .user-info__buttons                
-            if edit
-                button.user-info__buttons__save-button="Apply"
-            else
-                +link({href: "./edit-profile", title: "Edit profile"})
-                +link({href: "/change-password", title: "Change password"})
-                +link({href: "/", title: "Sign Out"})
+        .user-info__buttons                            
+            button.user-info__buttons__save-button="Apply"
+            
 
 
-        a(class="user-info__close" href=edit ? './profile': '/')
+        a(class="user-info__close" href='/profile')
             +svg({ icon: 'close' })

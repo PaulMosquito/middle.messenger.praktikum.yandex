@@ -7,7 +7,7 @@ class EditableForm extends Block {
 	constructor(props) {
 		super({
 			...props,
-			Input: new Input({
+			Form: new Input({
 				id: props.id,
 				name: props.name,
 				value: props.value
@@ -19,7 +19,7 @@ class EditableForm extends Block {
 
 		return this.compile(`
             if edit
-                #{Input}
+                #{Form}
             else
                 .editable-form
                     .editable-form__name=name

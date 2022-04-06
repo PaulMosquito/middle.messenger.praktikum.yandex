@@ -1,9 +1,7 @@
 import Block from '../../core/Block';
 import './title.css';
 
-
 class Title extends Block {
-
 	render() {
 		const { center, value } = this.props;
 

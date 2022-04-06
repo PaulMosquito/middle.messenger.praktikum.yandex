@@ -1,9 +1,9 @@
 import { renderDOM }  from './core';
 
-import Login from './pages/login';
+import { Page } from './pages';
 
-const login = new Login();
+const page = new Page();
 
 document.addEventListener('DOMContentLoaded', () => {
-	renderDOM(login);
+	renderDOM(page);
 });

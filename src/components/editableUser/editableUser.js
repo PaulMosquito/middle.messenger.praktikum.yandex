@@ -1,8 +1,8 @@
 import Block from '../../core/Block';
-import { EditableForm, Link, SVG } from '../';
-import './user.css';
+import { EditableForm, SVG } from '..';
+import './editableUser.css';
 
-class User extends Block {
+class EditableUser extends Block {
 	constructor(props) {
 		super({
 			...props,
@@ -12,10 +12,7 @@ class User extends Block {
 			LastNameForm: new EditableForm({ id: 'last-name', name: 'Last Name', value: 'Kdsadsaew', edit: true }),
 			LoginForm: new EditableForm({ id: 'login', name: 'Login', value: 'dsassdsa', edit: true }),
 			MailForm: new EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true}),
-			PhoneNumberForm: new EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true }),
-			EditProfileLink: new Link({href: './edit-profile.pug', title: 'Edit profile'}),
-			ChangePasswordLink: new Link({href: './change-password', title: 'Change password'}),
-			SignOutLink: new Link({href: '/', title: 'Sign Out'})
+			PhoneNumberForm: new EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true })
 		});
 	}
 	render() {
@@ -33,9 +30,7 @@ class User extends Block {
                     #{PhoneNumberForm}
 
                 .user-info__buttons
-                    #{EditProfileLink}
-                    #{ChangePasswordLink}
-                    #{SignOutLink}
+                    button.user-info__buttons__save-button="Apply"
 
 
                 a(class="user-info__close" href="/profile")
@@ -44,4 +39,4 @@ class User extends Block {
 	}
 }
 
-export default User;
+export default EditableUser;

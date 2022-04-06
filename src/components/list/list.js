@@ -1,6 +1,5 @@
 import Block from '../../core/Block';
 
-
 class List extends Block {
 	constructor(props) {
 		const Childrens = props.items.reduce((acc, item, i) => ({...acc, [`${props.name}_${i}`]: item}), {});

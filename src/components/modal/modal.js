@@ -1,23 +1,26 @@
 import Block from '../../core/Block';
-import { ModalRow } from './modalRow';
+import { List } from '../';
+import ModalRow from './modalRow';
 import './modal.css';
 
 class Modal extends Block {
 	constructor(props) {
+		const Rows = new List({ items: props.list.map(rowProps => new ModalRow(rowProps)), name: 'Rows' });
+
 		super({
 			...props,
-			ModalRow: props.list.map(rowProps => new ModalRow(rowProps))
+			Rows
 		});
 	}
 	render() {
 		const { id, position='top' } = this.props;
 
 		return this.compile(`
-            div(id=id class=class)
-                #{ModalRow}
-        `, {
+			div(id=id class=className)
+				#{Rows}
+		`, {
 			id,
-			class: `modal modal_${position}`
+			className: `modal modal_${position}`
 		});
 	}
 }

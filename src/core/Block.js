@@ -156,8 +156,6 @@ export default class Block {
 
 
 		Object.values(this.children).forEach(child => {
-
-			console.log(fragment.content, child);
 			const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
 
 			stub.replaceWith(child.getContent());

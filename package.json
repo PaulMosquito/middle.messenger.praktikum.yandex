@@ -10,7 +10,7 @@
     "test": "test",
     "lint": "eslint ./src/**/*.js --fix",
     "lint:style": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
-    "start": "parcel src/index.html --no-source-maps --no-cache",
+    "start": "parcel src/index.html --no-source-maps --no-cache --port 3000",
     "build": "parcel build --no-cache src/pages/index.pug"
   },
   "repository": {

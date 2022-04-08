@@ -10,7 +10,7 @@
   box-sizing: border-box;
   outline: 0;
   border: 0;
-  border-bottom: 1px solid var(--clr-17);
+  border-bottom: 1px solid var(--link);
   padding: 4px 0;
   font-size: var(--font-m);
 }

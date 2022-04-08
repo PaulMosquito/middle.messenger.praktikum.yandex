@@ -19,7 +19,7 @@ export default class Block {
 	constructor(propsAndChildren={}, tagName='div') {
 		const eventBus = new EventBus();
 
-		const { children, props } = this._getChildren(propsAndChildren);
+		const { children, props={} } = this._getChildren(propsAndChildren);
 
 		this._id = uuidv4();
 		this.children = children;
@@ -29,6 +29,7 @@ export default class Block {
 		};
 
 		this.props = this._makePropsProxy({ ...props, __id: this._id });
+		this.state = {};
 
 		this.eventBus = () => eventBus;
 
@@ -188,13 +189,13 @@ export default class Block {
 		return { children, props };
 	}
 
-	setState = (nextState) => {
+	setState(nextState) {
 		if (typeof nextState === 'undefined') {
 			return;
 		}
 
 		Object.assign(this.state, nextState);
-	};
+	}
 
 	_createDocumentElement(tagName) {
 		const element = document.createElement(tagName);

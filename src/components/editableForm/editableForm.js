@@ -10,7 +10,8 @@ class EditableForm extends Block {
 			Form: new Input({
 				id: props.id,
 				name: props.name,
-				value: props.value
+				value: props.value,
+				onBlur: props.onBlur
 			})
 		});
 	}

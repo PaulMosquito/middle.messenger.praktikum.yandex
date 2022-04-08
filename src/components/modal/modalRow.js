@@ -10,15 +10,15 @@ class ModalRow extends Block {
 		});
 	}
 	render() {
-		const { href, title } = this.props;
+		const { link, title } = this.props;
 
 		return this.compile(`
-			a(class="modal__row" href=href)
+			a(class="modal__row" href=link)
 				div.modal__row__icon
 					#{Icon}
 				span=title
         `, {
-			href,
+			link,
 			title
 		});
 	}

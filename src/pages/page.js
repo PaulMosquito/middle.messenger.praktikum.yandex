@@ -57,6 +57,7 @@ class Page extends Block {
 
 		if ([NAME_PAGE_BY_PATHNAMES[pathname]]) {
 			const Component = PAGE_BY_PATHNAMES[pathname];
+			
 			page[NAME_PAGE_BY_PATHNAMES[pathname]] = Component;
 		} else {
 			page['Error'] = new Error();

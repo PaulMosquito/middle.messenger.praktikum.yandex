@@ -14,20 +14,12 @@ class ModalButton extends Block {
 			})
 		});
 	}
-	handleOpenModal(buttonId) {
-		const modal = document.getElementById(buttonId)?.lastChild;
-
-		return (event) => {
-			modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-			event.stopImmediatePropagation();
-		};
-	}
 
 	render() {
 		const { id, icon='', isCreatingChat, list } = this.props;
 
 		return this.compile(`
-			button( id=id, class=className, onclick=onclick )
+			button(id=id, class=className)
 				if icon
 					#{SVG}
 				if list
@@ -37,7 +29,13 @@ class ModalButton extends Block {
 			icon,
 			id: `${id}-button`,
 			list,
-			onclick: this.handleOpenModal(id)
+			events: {
+				click: () => {
+					const { id } = this.props;
+					const modal = document.getElementById(id).lastChild;
+					modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+				}
+			}
 		});
 	}
 }

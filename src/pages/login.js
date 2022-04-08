@@ -12,8 +12,8 @@ class LoginPage extends Block {
 					{ name: 'Password', type: 'password' }
 				],
 				links: [
-					{href: '/chat', title: 'Sign in', isButton: true},
-					{href: '/auth', title: 'Sign up'}
+					{link: '/chat', title: 'Sign in', isButton: true},
+					{link: '/auth', title: 'Sign up'}
 				]
 			})
 		});

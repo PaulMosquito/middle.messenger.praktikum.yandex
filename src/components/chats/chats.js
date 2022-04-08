@@ -13,14 +13,14 @@ class Chats extends Block {
 				id: 'setting-modal',
 				position: 'top',
 				icon: 'setting',
-				list: [{href: '/profile', title: 'Profile', icon: 'user'}, {href:'/', title: 'Sign out', icon: 'sign-out'}]
+				list: [{link: '/account', title: 'Account', icon: 'user'}, {link:'/', title: 'Sign out', icon: 'signOut'}]
 			}),
 			CreatingChatModal: new ModalButton({
 				id: 'creating-chat',
 				isCreatingChat: true,
 				position: 'bottom',
 				icon: 'pencil',
-				list: [{href: '/create-chat', title: 'Create chat', icon: 'chat'}]
+				list: [{link: '/create-chat', title: 'Create chat', icon: 'chat'}]
 			}),
 			Conversations
 		});

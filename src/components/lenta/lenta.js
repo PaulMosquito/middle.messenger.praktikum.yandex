@@ -11,8 +11,8 @@ class Lenta extends Block {
 			ModalButton: new ModalButton({
 				id: 'setting-lenta',
 				position: 'top-left',
-				icon: 'setting_dots',
-				list: [{href: '/profile', title: 'Delete chat', icon: 'basket'}]
+				icon: 'settingDots',
+				list: [{link: '/account', title: 'Delete chat', icon: 'basket'}]
 			}),
 			Icon: new SVG({ width: '12px', height: '12px', icon: 'arrow' }),
 			Messages: new List({ items: CONVERSATION.map(v => new Message(v)), name: 'Messages' })

@@ -56,6 +56,10 @@ export default class Block {
 
 	_componentDidMount(props) {
 		this.componentDidMount(props);
+
+		Object.values(this.children).forEach(child => {
+			child.dispatchComponentDidMount();
+		});
 	}
 
 	componentDidMount() {
@@ -91,13 +95,14 @@ export default class Block {
 	}
 
 	_render() {
-		const block = this.render(); // render теперь возвращает DocumentFragment
+		const fragment = this.render();
 
 		this._removeEvents();
-		this._element.innerHTML = ''; // удаляем предыдущее содержимое
+		const newElement = fragment;
 
-		this._element = block;
+		this._element.replaceWith(newElement);
 
+		this._element = newElement;
 		this._addEvents();
 	}
 
@@ -108,13 +113,13 @@ export default class Block {
 	getContent() {
 		const element = this._element;
 		// Хак, чтобы вызвать CDM только после добавления в DOM
-		if (element?.parentNode?.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
-			setTimeout(() => {
-				if (element?.parentNode?.nodeType !==  Node.DOCUMENT_FRAGMENT_NODE ) {
-					this.eventBus().emit(Block.EVENTS.FLOW_CDM);
-				}
-			}, 100);
-		}
+		// if (element?.parentNode?.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
+		// 	setTimeout(() => {
+		// 		if (element?.parentNode?.nodeType !==  Node.DOCUMENT_FRAGMENT_NODE ) {
+		// 			this.eventBus().emit(Block.EVENTS.FLOW_CDM);
+		// 		}
+		// 	}, 100);
+		// }
 
 		return this._element;
 	}
@@ -143,20 +148,22 @@ export default class Block {
 	compile(template, props={}) {
 		const propsAndStubs = {...props};
 
+		this.props = props;
 		Object.entries(this.children).forEach(([key, child]) => {
 			propsAndStubs[key] = `div data-id=${child._id}`;
 		});
 
-
 		const fragment = this._createDocumentElement('template');
-
-
 
 		fragment.innerHTML = pug.render(template.replaceAll('    ', '\t').replaceAll('\n\t\t\t', '\n'), propsAndStubs);
 
 
 		Object.values(this.children).forEach(child => {
 			const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
+
+			if (!stub) {
+				return;
+			}
 
 			stub.replaceWith(child.getContent());
 		});
@@ -210,18 +217,18 @@ export default class Block {
 
 	_addEvents() {
 		const { events } = this.props || {};
-
 		if (!events) {
 			return;
 		}
 
 		Object.entries(events).forEach(([event, listener]) => {
-			this._element.addEventListener(event, listener);
+			this._element.firstElementChild.addEventListener(event, listener);
 		});
 	}
 
 	show() {
-		this.getContent().style.display = 'block';
+		console.log(this._element);
+		this._element.style.display = 'block';
 	}
 
 	hide() {

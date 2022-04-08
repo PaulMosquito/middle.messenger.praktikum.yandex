@@ -17,8 +17,8 @@ class Auth extends Block {
 					{ name: 'Repeat password', type: 'password' }
 				],
 				links: [
-					{href: './chat.pug', title: 'Let\'s go!', isButton: true},
-					{href: '/', title: 'Sign in'}
+					{link: './chat.pug', title: 'Let\'s go!', isButton: true},
+					{link: '/', title: 'Sign in'}
 				]
 			})
 		});

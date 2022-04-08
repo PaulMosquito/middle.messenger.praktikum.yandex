@@ -6,13 +6,13 @@ class Link extends Block {
 		super(props);
 	}
 	render() {
-		const { href, title, isButton } = this.props;
+		const { link, title, isButton } = this.props;
 
 		return this.compile(`
-			a(href=href class=className)=title
+			a(href=link class=className onclick=onClick)=title
 		`, {
 			className: isButton ? 'link-button-component' : 'link-component',
-			href,
+			link,
 			title
 		});
 	}

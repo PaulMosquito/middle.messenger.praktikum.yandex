@@ -17,5 +17,5 @@
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
-  background: #3369F3;
+  background: var(--blue);
 }

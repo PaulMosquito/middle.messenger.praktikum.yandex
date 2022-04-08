@@ -1,45 +1,44 @@
 .chats {
-    position: relative;
-    z-index: 1000;
-    height: 100%;
+	position: relative;
+	z-index: 1000;
+	height: 100%;
+	border-right: 1px solid var(--light-border);
+	background: var(--clr-8);
 
-    border-right: 1px solid #EAEAEA;
-    background: #FBFBFB;
+	&__title {
+		flex: 1;
+		display: flex;
+		justify-content: space-around;
+		margin: 0 1rem;
+		border-bottom: 1px solid var(--light-border);
+		padding: 1rem 0;
 
-    &__title {
-        flex: 1;
-        display: flex;
-        justify-content: space-around;
-        margin: 0 1rem;
-        border-bottom: 1px solid #EAEAEA;
-        padding: 1rem 0;
+		&__search {
+			flex: 15;
+			border: 0;
+			background: var(--light-background);
+			color: var(--black);
+			padding: 0.25rem 1rem;
+			border-radius: 8px;
+			outline: none;
+		}
 
-        &__search {
-            flex: 15;
-            border: 0;
-            background: #EFEFEF;
-            color: black;
-            padding: 0.25rem 1rem;
-            border-radius: 8px;
-            outline: none;
-        }
-        
-        &__search::placeholder {
-            color: #999999;
-        }
-    }
-    
-    &__list {
-        height: 100%;
-        overflow: hidden;
-        overflow-y: scroll;
-        width: inherit;
-        
-        &__creating-chat {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            margin: 16px;
-        }
-    }
+		&__search::placeholder {
+			color: var(--grey);
+		}
+	}
+
+	&__list {
+		height: 100%;
+		overflow: hidden;
+		overflow-y: scroll;
+		width: inherit;
+
+		&__creating-chat {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin: 16px;
+		}
+	}
 }

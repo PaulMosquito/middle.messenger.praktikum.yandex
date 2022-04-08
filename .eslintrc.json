@@ -32,6 +32,9 @@
 			"error",
 			"always"
 		],
+		"object-curly-spacing": ["error", "always"],
+		"array-bracket-spacing": ["error", "always"],
+		"brace-style": "error",
 		"constructor-super": 2,
 		"for-direction": 2,
 		"getter-return": 2,
@@ -94,7 +97,6 @@
 		"use-isnan": 2,
 		"valid-typeof": 2,
 		"no-var": 2,
-		"array-bracket-spacing": 2,
 		"block-spacing": 2,
 		"camelcase": 2,
 		"comma-dangle": 2,

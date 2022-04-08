@@ -13,11 +13,11 @@
   padding-left: 0;
   padding-right: 0;
   height: fit-content;
-  background: #FFFFFF;
+  background: var(--white);
 }
 .lenta__header {
   position: relative;
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid var(--light-border);
   padding: 12px 0.5rem;
 }
 .lenta__header__logo {
@@ -32,12 +32,12 @@
   height: 48px;
   width: 48px;
   border-radius: 50%;
-  background: #EFEFEF;
+  background: var(--light-background);
 }
 .lenta__header__name {
   flex: 10;
-  color: #000000;
-  font-size: 16px;
+  color: var(--black);
+  font-size: var(--font-m);
   font-weight: 600;
 }
 .lenta__conversation {
@@ -51,13 +51,13 @@
 }
 .lenta__footer {
   padding: 22px 0.5rem;
-  border-top: 1px solid #EAEAEA;
+  border-top: 1px solid var(--light-border);
 }
 .type-message[contenteditable] {
   flex: 10;
   display: inline-block;
-  font-size: 16px;
-  background: #EFEFEF;
+  font-size: var(--font-m);
+  background: var(--light-background);
   width: inherit;
   margin-right: 1rem;
   padding: 1rem 1.75rem;
@@ -72,11 +72,11 @@
   outline: 0;
 }
 .type-message[contenteditable]:not(:placeholder-shown) {
-  color: black;
+  color: var(--black);
 }
 .type-message[contenteditable]:empty::before {
   content: "Message";
-  color: #999999;
+  color: var(--grey);
 }
 .send-message {
   display: flex;
@@ -84,6 +84,6 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: #3369F3;
+  background: var(--blue);
   border-radius: 50%;
 }

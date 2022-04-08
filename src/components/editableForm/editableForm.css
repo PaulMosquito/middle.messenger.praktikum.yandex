@@ -3,13 +3,13 @@
   align-items: center;
   justify-content: space-between;
   width: inherit;
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid var(--light-border);
   padding: 1rem 0;
-  font-size: 16px;
+  font-size: var(--font-m);
 }
 .editable-form__name {
-  color: #999999;
+  color: var(--grey);
 }
 .editable-form__value {
-  color: #000000;
+  color: var(--black);
 }

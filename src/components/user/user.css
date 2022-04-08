@@ -5,7 +5,7 @@
   justify-content: center;
   height: 100%;
   width: 480px;
-  background: #FFFFFF;
+  background: var(--white);
 }
 .user-info__photo {
   display: flex;
@@ -14,7 +14,7 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: #EFEFEF;
+  background: var(--light-background);
   margin-bottom: 2rem;
 }
 .user-info__photo__sekeleton {
@@ -41,17 +41,17 @@
   border-radius: 6px;
   padding: 0.25rem;
   margin-bottom: 16px;
-  color: #FFFFFF;
+  color: var(--white);
   text-decoration: none;
-  font-size: 16px;
-  background: #33c424;
+  font-size: var(--font-m);
+  background: var(--success);
 }
 .user-info__buttons__save-button:hover {
-  background: rgba(51, 196, 36, 0.9);
+  background: var(--success-90);
 }
 .user-info__buttons__save-button:active {
-  background: rgba(51, 196, 36);
-  outline: 3px solid rgba(51, 196, 36, 0.3);
+  background: var(--success);
+  outline: 3px solid var(--success-30);
 }
 .user-info__close {
   cursor: pointer;
@@ -66,14 +66,14 @@
   border-radius: 50%;
   border: 0;
   outline: 0;
-  font-size: 64px;
+  font-size: var(--font-xxl);
   text-decoration: none;
-  color: #000000;
+  color: var(--black);
   background: transparent;
 }
 .user-info__close:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--black-10);
 }
 .user-info__close:active {
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--black-40);
 }

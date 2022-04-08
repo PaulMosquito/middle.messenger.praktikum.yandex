@@ -1,5 +1,5 @@
 .title {
-  font-size: 18px;
+  font-size: var(--font-l);
   margin-bottom: 8px;
 }
 .title_center {

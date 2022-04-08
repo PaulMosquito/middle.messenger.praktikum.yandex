@@ -8,6 +8,7 @@ import {
 	Error,
 	Login,
 } from './';
+import './page.css';
 
 const PAGES = {
     '/auth': `

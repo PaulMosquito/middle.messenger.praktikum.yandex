@@ -1,0 +1,57 @@
+@font-face {
+  font-family: Inter;
+  src: url(./Inter-Regular.ttf);    
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family: "Inter", serif, sans-serif;
+
+
+}
+body {
+  margin: 0;
+  padding: 0; 
+}
+
+#app {
+  --grey: #999;
+  --white: #fff;
+  --blue: #3369f3;
+
+  --black: rgb(0, 0, 0);
+  --black-10: rgba(0, 0, 0, 0.1);
+  --black-40: rgba(0, 0, 0, 0.4);
+  --black-4: rgba(0, 0, 0, 0.04);
+  --black-8: rgba(0, 0, 0, 0.08);
+
+
+  --background-message: #e4edfd;
+  --background-message-2: #f8f8f8;
+
+  --light-border: #eaeaea;
+  --light-background: #efefef;
+
+  --success: rgb(51, 196, 36);
+  --success-90: rgba(51, 196, 36, 0.9);
+  --success-30: rgba(51, 196, 36, 0.3);
+
+  --link: rgb(51, 105, 243);
+  --link-90: rgba(51, 105, 243, 0.9);
+  --link-70: rgba(51, 105, 243, 0.3);
+  --link-10: rgba(51, 105, 243, 0.1);
+  --link-5: rgba(51, 105, 243, 0.05);
+
+  --font-xs: 11px;
+  --font-s: 13px;
+  --font-m: 16px;
+  --font-l: 18px;
+  --font-xxl: 64px;
+  
+  color: var(--black);;
+  background: var(--white);
+  font-size: var(--font-s);
+  height: 100%;
+}

@@ -17,14 +17,14 @@
   min-height: 16px;
   height: auto;
   padding: 12px;
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 1rem 1rem;
 }
 .my-message {
-  background: #E4EDFD;
-  border-radius: 12px 12px 0 12px;
+  background: var(--background-message);
+  border-radius: 12px 12px 0;
 }
 .other-message {
-  background: #F8F8F8;
+  background: var(--background-message-2);
   border-radius: 12px 12px 12px 0;
 }
 .other-message:first-of-type,
@@ -35,5 +35,5 @@
   position: absolute;
   bottom: 0;
   right: 8px;
-  font-size: 11px;
+  font-size: var(--font-xs);
 }

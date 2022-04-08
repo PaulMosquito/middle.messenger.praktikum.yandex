@@ -28,7 +28,7 @@ export default class Block {
 			props
 		};
 
-		this.props = this._makePropsProxy({...props, __id: this._id });
+		this.props = this._makePropsProxy({ ...props, __id: this._id });
 
 		this.eventBus = () => eventBus;
 
@@ -113,13 +113,13 @@ export default class Block {
 	getContent() {
 		const element = this._element;
 		// Хак, чтобы вызвать CDM только после добавления в DOM
-		// if (element?.parentNode?.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
-		// 	setTimeout(() => {
-		// 		if (element?.parentNode?.nodeType !==  Node.DOCUMENT_FRAGMENT_NODE ) {
-		// 			this.eventBus().emit(Block.EVENTS.FLOW_CDM);
-		// 		}
-		// 	}, 100);
-		// }
+		if (element?.parentNode?.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
+			setTimeout(() => {
+				if (element?.parentNode?.nodeType !==  Node.DOCUMENT_FRAGMENT_NODE ) {
+					this.eventBus().emit(Block.EVENTS.FLOW_CDM);
+				}
+			}, 100);
+		}
 
 		return this._element;
 	}
@@ -136,7 +136,7 @@ export default class Block {
 			set(target, prop, value) {
 				target[prop] = value;
 
-				self.eventBus().emit(Block.EVENTS.FLOW_CDU, {...target}, target);
+				self.eventBus().emit(Block.EVENTS.FLOW_CDU, { ...target }, target);
 				return true;
 			},
 			deleteProperty() {
@@ -146,10 +146,10 @@ export default class Block {
 	}
 
 	compile(template, props={}) {
-		const propsAndStubs = {...props};
+		const propsAndStubs = { ...props };
 
 		this.props = props;
-		Object.entries(this.children).forEach(([key, child]) => {
+		Object.entries(this.children).forEach(([ key, child ]) => {
 			propsAndStubs[key] = `div data-id=${child._id}`;
 		});
 
@@ -177,7 +177,7 @@ export default class Block {
 		const children = {};
 		const props = {};
 
-		Object.entries(propsAndChildren).forEach(([key, value]) => {
+		Object.entries(propsAndChildren).forEach(([ key, value ]) => {
 			if (value instanceof Block) {
 				children[key] = value;
 			} else {
@@ -210,7 +210,7 @@ export default class Block {
 		}
 
 
-		Object.entries(events).forEach(([event, listener]) => {
+		Object.entries(events).forEach(([ event, listener ]) => {
 			this._element.removeEventListener(event, listener);
 		});
 	}
@@ -221,13 +221,12 @@ export default class Block {
 			return;
 		}
 
-		Object.entries(events).forEach(([event, listener]) => {
+		Object.entries(events).forEach(([ event, listener ]) => {
 			this._element.firstElementChild.addEventListener(event, listener);
 		});
 	}
 
 	show() {
-		console.log(this._element);
 		this._element.style.display = 'block';
 	}
 

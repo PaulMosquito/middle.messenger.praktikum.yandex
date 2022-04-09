@@ -70,9 +70,16 @@ export const checkPassword = (str = ''):boolean => {
 	return true;
 };
 
+// От 10 до 15 символов, состоит из цифр в начале может быть "+"
 export const checkPhone = (str =''):boolean => !!str.match(/^[+|\d]\d{10,15}$/);
 
+// Не должен быть пустым
 export const checkMessage = (str =''):boolean => !!str.match(/.+/);
 
-
-export const checkEmail = (str =''):boolean => true;
+/**
+ * Латиница, может включать цифры, спецсимволы
+ * Должен быть символ "@", три буквы после него и "."
+ * @param str
+ * @returns {boolean}
+ */
+export const checkEmail = (str = ''):boolean => !!str.match(/[\w-]@[a-zA-Z]{3}\./);

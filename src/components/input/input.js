@@ -1,61 +1,18 @@
 import Block from '../../core/Block';
 import './input.css';
 
-const logValue = (...value) => {
-	console.log(value);
-};
 class InputForm extends Block {
 	constructor(props) {
 		super(props);
-		this.state = {
-			value: ''
-		};
-
-	}
-
-	onBlur (event) {
-		if (this.props?.onBlur) {
-			return this.props.onBlur(event);
-		}
-		logValue('default BLUR', event);
-	}
-
-	onFocus(event) {
-		if (this.props?.onFocus) {
-			return this.props.onFocus(event);
-		}
-		logValue('default FOCUS', event);
-	}
-
-	onKeyDown(event) {
-		if (this.props?.onKeyDown) {
-			return this.props.onKeyDown(event);
-		}
-
-		if (event.key === 'Escape') {
-			logValue('default onKeyDown', event.key);
-		}
-	}
-
-	onChange(e) {
-		if (this.props?.onChange) {
-			return this.props.onChange(e);
-		}
-
-		console.log(e.target.value);
 	}
 
 	render() {
 		const {
 			name,
 			type='text',
-			onBlur=this.onBlur,
-			onFocus=this.onFocus
-		} = this.props;
-
-		const {
+			events,
 			value
-		} = this.state;
+		} = this.props;
 
 		return this.compile(`
 			input.input-form__input(placeholder=name type=type value=value onblur=onBlur)
@@ -63,29 +20,57 @@ class InputForm extends Block {
 			name,
 			type,
 			value,
-			events: {
-				focus: onFocus,
-				blur: onBlur,
-				keydown: this.onKeyDown,
-				keyup: this.onChange
-			}
+			events
 		});
 	}
 }
 
 class Input extends Block {
 	constructor(props) {
+		const state = {
+			value: '',
+			error: null
+		};
+		super({
+			...props,
+			InputForm: new InputForm({
+				name: props.name,
+				type: props.type,
+				value: state.value,
+				events: {
+					blur: (event) => {
+						if (this.props?.onBlur) {
+							return this.props.onBlur(event);
+						}
+					},
+					focus: (event) => {
+						if (this.props?.onFocus) {
+							return this.props.onFocus(event);
+						}
+					},
+					keydown: (event) => {
+						if (this.props?.onKeyDown) {
+							return this.props.onKeyDown(event);
+						}
 
-		super({ ...props, InputForm: new InputForm({
-			name: props.name,
-			type: props.type,
-			value: props.value,
-			onBlur: props.onBlur
-		}) });
+
+						if (event.key === 'Escape') {
+							this.setState({ value: '' });
+						} else {
+
+							this.setState({ value: event.target.value });
+						}
+
+					}
+				}
+			})
+		});
+
+		this.state = state;
 	}
 
 	render() {
-		const { name, type='text', value } = this.props;
+		const { name, type='text' } = this.props;
 
 		return this.compile(`
             fieldset.input-form
@@ -95,8 +80,7 @@ class Input extends Block {
 			onBlur: this.onBlur,
 			id:`input-${name}`,
 			name,
-			type,
-			value
+			type
 		});
 	}
 }

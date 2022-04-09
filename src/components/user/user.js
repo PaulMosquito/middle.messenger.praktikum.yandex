@@ -11,11 +11,11 @@ class User extends Block {
 			NameForm: new EditableForm({ id: 'name', name: 'Name', value: 'Dsadpsa', edit: true }),
 			LastNameForm: new EditableForm({ id: 'last-name', name: 'Last Name', value: 'Kdsadsaew', edit: true }),
 			LoginForm: new EditableForm({ id: 'login', name: 'Login', value: 'dsassdsa', edit: true }),
-			MailForm: new EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true}),
+			MailForm: new EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true }),
 			PhoneNumberForm: new EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true }),
-			EditProfileLink: new Link({link: '/edit-profile', title: 'Edit profile'}),
-			ChangePasswordLink: new Link({link: '/change-password', title: 'Change password'}),
-			SignOutLink: new Link({link: '/', title: 'Sign Out'})
+			EditProfileLink: new Link({ link: '/edit-profile', title: 'Edit profile' }),
+			ChangePasswordLink: new Link({ link: '/change-password', title: 'Change password' }),
+			SignOutLink: new Link({ link: '/', title: 'Sign Out' })
 		});
 	}
 	render() {

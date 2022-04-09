@@ -12,7 +12,7 @@ class Lenta extends Block {
 				id: 'setting-lenta',
 				position: 'top-left',
 				icon: 'settingDots',
-				list: [{link: '/account', title: 'Delete chat', icon: 'basket'}]
+				list: [ { link: '/account', title: 'Delete chat', icon: 'basket' } ]
 			}),
 			Icon: new SVG({ width: '12px', height: '12px', icon: 'arrow' }),
 			Messages: new List({ items: CONVERSATION.map(v => new Message(v)), name: 'Messages' })

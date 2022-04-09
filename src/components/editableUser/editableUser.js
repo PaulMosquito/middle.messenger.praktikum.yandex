@@ -2,27 +2,20 @@ import Block from '../../core/Block';
 import { EditableForm, SVG } from '..';
 import './editableUser.css';
 
-const CloseIcon = new SVG({ icon: 'close' });
-
-const NameForm = new EditableForm({ id: 'first_name', name: 'Name', value: 'Dsadpsa', edit: true });
-const LastNameForm = new EditableForm({ id: 'second_name', name: 'Last Name', value: 'Kdsadsaew', edit: true });
-
-const LoginForm = new EditableForm({ id: 'login', name: 'Login', value: 'dsassdsa', edit: true });
-const MailForm = new EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true });
-const PhoneNumberForm = new EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true });
-const PhotoIcon = new SVG({ width: '40px', height: '40px', icon: 'photo' });
 
 class EditableUser extends Block {
 	constructor(props) {
+		console.log('photo');
+		console.log('close');
 		super({
 			...props,
-			CloseIcon,
-			LastNameForm,
-			LoginForm,
-			MailForm,
-			NameForm,
-			PhoneNumberForm,
-			PhotoIcon
+			CloseIcon: new SVG({ icon: 'close' }),
+			SecondNameForm: new EditableForm({ id: 'second_name', name: 'Second Name', value: 'Kdsadsaew', edit: true }),
+			LoginForm: new EditableForm({ id: 'login', name: 'Login', value: 'dsassdsa', edit: true }),
+			MailForm: new EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true }),
+			FirstNameForm: new EditableForm({ id: 'first_name', name: 'Name', value: 'Dsadpsa', edit: true }),
+			PhoneNumberForm: new EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true }),
+			PhotoIcon: new SVG({ width: '40px', height: '40px', icon: 'photo' })
 		});
 	}
 	render() {
@@ -34,8 +27,8 @@ class EditableUser extends Block {
                         #{PhotoIcon}
 
                 .user-info__main
-                    #{NameForm}
-                    #{LastNameForm}
+                    #{FirstNameForm}
+                    #{SecondNameForm}
                     #{LoginForm}
                     #{MailForm}
                     #{PhoneNumberForm}

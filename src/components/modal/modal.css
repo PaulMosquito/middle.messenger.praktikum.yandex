@@ -33,6 +33,7 @@
   padding: 0 1.75rem;
   box-sizing: border-box;
   text-decoration: none;
+  color: var(--black);
 }
 .modal__row:visited {
   color: var(--black);

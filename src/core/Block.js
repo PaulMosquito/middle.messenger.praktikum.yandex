@@ -149,7 +149,6 @@ export default class Block {
 	compile(template, props={}) {
 		const propsAndStubs = { ...props };
 
-		this.props = props;
 		Object.entries(this.children).forEach(([ key, child ]) => {
 			propsAndStubs[key] = `div data-id=${child._id}`;
 		});

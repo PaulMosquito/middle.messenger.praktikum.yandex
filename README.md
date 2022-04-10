@@ -1,5 +1,5 @@
 ## PR для ревью
-https://github.com/PaulMosquito/middle.messenger.praktikum.yandex/pull/1
+https://github.com/PaulMosquito/middle.messenger.praktikum.yandex/pull/2
 
 ## Описание
 

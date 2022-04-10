@@ -42,12 +42,12 @@ const NAME_PAGE_BY_PATHNAMES = {
 	'/account': 'Account'
 }
 const PAGE_BY_PATHNAMES = {
-	'/': new Login(),
-	'/auth': new Auth(),
-	'/chat': new Chat(),
-	'/edit-profile': new EditProfile(),
-	'/login': new Login(),
-	'/account': new Account()
+	'/': Login(),
+	'/auth': Auth(),
+	'/chat': Chat(),
+	'/edit-profile': EditProfile(),
+	'/login': Login(),
+	'/account': Account()
 }
 
 class Page extends Block {

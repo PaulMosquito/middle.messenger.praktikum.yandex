@@ -8,14 +8,14 @@ class Lenta extends Block {
 	constructor(props) {
 		super({
 			...props,
-			ModalButton: new ModalButton({
+			ModalButton: ModalButton({
 				id: 'setting-lenta',
 				position: 'top-left',
 				icon: 'settingDots',
 				list: [ { link: '/account', title: 'Delete chat', icon: 'basket' } ]
 			}),
-			Icon: new SVG({ width: '12px', height: '12px', icon: 'arrow' }),
-			Messages: new List({ items: CONVERSATION.map(v => new Message(v)), name: 'Messages' })
+			Icon: SVG({ width: '12px', height: '12px', icon: 'arrow' }),
+			Messages: List({ items: CONVERSATION.map(v => Message(v)), name: 'Messages' })
 		});
 	}
 	render() {
@@ -39,4 +39,4 @@ class Lenta extends Block {
 	}
 }
 
-export default Lenta;
+export default (props) => new Lenta(props);

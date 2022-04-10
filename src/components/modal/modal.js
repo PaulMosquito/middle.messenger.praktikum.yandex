@@ -5,7 +5,7 @@ import './modal.css';
 
 class Modal extends Block {
 	constructor(props) {
-		const Rows = new List({ items: props.list.map(rowProps => new ModalRow(rowProps)), name: 'Rows' });
+		const Rows = List({ items: props.list.map(rowProps => ModalRow(rowProps)), name: 'Rows' });
 
 		super({
 			...props,
@@ -25,4 +25,4 @@ class Modal extends Block {
 	}
 }
 
-export default Modal;
+export default props => new Modal(props);

@@ -1,11 +1,11 @@
 import Block from '../core/Block';
 import { LoginForm } from '../components';
 
-class LoginPage extends Block {
+class Login extends Block {
 	constructor(props) {
 		super({
 			...props,
-			LoginForm: new LoginForm({
+			LoginForm: LoginForm({
 				title: { value: 'WHO A U?', center: true },
 				inputs: [
 					{ name: 'Login' },
@@ -25,4 +25,4 @@ class LoginPage extends Block {
 	}
 }
 
-export default LoginPage;
+export default () => new Login();

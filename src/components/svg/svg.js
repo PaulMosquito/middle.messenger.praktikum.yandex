@@ -12,4 +12,4 @@ class SVG extends Block {
 	}
 }
 
-export default SVG;
+export default props => new SVG(props);

@@ -5,12 +5,12 @@ import './loginForm.css';
 class LoginForm extends Block {
 	constructor(props) {
 
-		const Inputs = new List({ items: props.inputs.map(inputProps => new Input(inputProps)), name: 'Inputs' });
-		const Links = new List({ items: props.links.map(inputProps => new Link(inputProps)), name: 'Links' });
+		const Inputs = List({ items: props.inputs.map(inputProps => Input(inputProps)), name: 'Inputs' });
+		const Links = List({ items: props.links.map(inputProps => Link(inputProps)), name: 'Links' });
 
 		super({
 			...props,
-			Title: new Title(props.title),
+			Title: Title(props.title),
 			Inputs,
 			Links
 		});
@@ -28,4 +28,4 @@ class LoginForm extends Block {
 	}
 }
 
-export default LoginForm;
+export default (props) => new LoginForm(props);

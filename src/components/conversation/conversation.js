@@ -2,10 +2,6 @@ import Block from '../../core/Block';
 import './conversation.css';
 
 class Conversation extends Block {
-	constructor({ name, lastMessage, lastMessageDate, countUnreadMessages }) {
-		super({ name, lastMessage, lastMessageDate, countUnreadMessages });
-	}
-
 	render() {
 		const { name, lastMessage, lastMessageDate, countUnreadMessages } = this.props;
 		return this.compile(`
@@ -32,4 +28,4 @@ class Conversation extends Block {
 	}
 }
 
-export default Conversation;
+export default (props) => new Conversation(props);

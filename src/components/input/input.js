@@ -1,29 +1,8 @@
 import Block from '../../core/Block';
+import InputForm from './inputForm';
 import './input.css';
 
-class InputForm extends Block {
-	constructor(props) {
-		super(props);
-	}
 
-	render() {
-		const {
-			name,
-			type='text',
-			events,
-			value
-		} = this.props;
-
-		return this.compile(`
-			input.input-form__input(placeholder=name type=type value=value onblur=onBlur)
-        `, {
-			name,
-			type,
-			value,
-			events
-		});
-	}
-}
 
 class Input extends Block {
 	constructor(props) {
@@ -33,7 +12,7 @@ class Input extends Block {
 		};
 		super({
 			...props,
-			InputForm: new InputForm({
+			InputForm: InputForm({
 				name: props.name,
 				type: props.type,
 				value: state.value,
@@ -85,4 +64,4 @@ class Input extends Block {
 	}
 }
 
-export default Input;
+export default (props) => new Input(props);

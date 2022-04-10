@@ -5,8 +5,8 @@ class EditProfile extends Block {
 	constructor(props) {
 		super({
 			...props,
-			Chats: new Chats(),
-			User: new EditableUser()
+			Chats: Chats(),
+			User: EditableUser()
 		});
 	}
 	render() {
@@ -21,4 +21,4 @@ class EditProfile extends Block {
 	}
 }
 
-export default EditProfile;
+export default () => new EditProfile();

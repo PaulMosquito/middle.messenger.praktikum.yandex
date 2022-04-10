@@ -6,8 +6,8 @@ class ModalButton extends Block {
 	constructor(props) {
 		super({
 			...props,
-			SVG: new SVG({ icon: props.icon }),
-			Modal: new Modal({
+			SVG: SVG({ icon: props.icon }),
+			Modal: Modal({
 				id: props.id,
 				list: props.list,
 				position: props.position
@@ -40,4 +40,4 @@ class ModalButton extends Block {
 	}
 }
 
-export default ModalButton;
+export default props => new ModalButton(props);

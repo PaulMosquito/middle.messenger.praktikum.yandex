@@ -5,7 +5,7 @@ class Auth extends Block {
 	constructor(props) {
 		super({
 			...props,
-			LoginForm: new LoginForm({
+			LoginForm: LoginForm({
 				title: { value: 'LET\'S TALK ABOUT YOURSELF', center: true },
 				inputs: [
 					{ name: 'Name' },
@@ -30,4 +30,4 @@ class Auth extends Block {
 	}
 }
 
-export default Auth;
+export default () => new Auth();

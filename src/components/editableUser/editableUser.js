@@ -5,17 +5,15 @@ import './editableUser.css';
 
 class EditableUser extends Block {
 	constructor(props) {
-		console.log('photo');
-		console.log('close');
 		super({
 			...props,
-			CloseIcon: new SVG({ icon: 'close' }),
-			SecondNameForm: new EditableForm({ id: 'second_name', name: 'Second Name', value: 'Kdsadsaew', edit: true }),
-			LoginForm: new EditableForm({ id: 'login', name: 'Login', value: 'dsassdsa', edit: true }),
-			MailForm: new EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true }),
-			FirstNameForm: new EditableForm({ id: 'first_name', name: 'Name', value: 'Dsadpsa', edit: true }),
-			PhoneNumberForm: new EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true }),
-			PhotoIcon: new SVG({ width: '40px', height: '40px', icon: 'photo' })
+			CloseIcon: SVG({ icon: 'close' }),
+			SecondNameForm: EditableForm({ id: 'second_name', name: 'Second Name', value: 'Kdsadsaew', edit: true }),
+			LoginForm: EditableForm({ id: 'login', name: 'Login', value: 'dsassdsa', edit: true }),
+			MailForm: EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true }),
+			FirstNameForm: EditableForm({ id: 'first_name', name: 'Name', value: 'Dsadpsa', edit: true }),
+			PhoneNumberForm: EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true }),
+			PhotoIcon: SVG({ width: '40px', height: '40px', icon: 'photo' })
 		});
 	}
 	render() {
@@ -43,4 +41,4 @@ class EditableUser extends Block {
 	}
 }
 
-export default EditableUser;
+export default (props) => new EditableUser(props);

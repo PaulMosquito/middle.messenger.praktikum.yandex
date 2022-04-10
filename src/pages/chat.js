@@ -5,8 +5,8 @@ class Chat extends Block {
 	constructor(props) {
 		super({
 			...props,
-			Chats: new Chats(),
-			Lenta: new Lenta()
+			Chats: Chats(),
+			Lenta: Lenta()
 		});
 	}
 	render() {
@@ -21,4 +21,4 @@ class Chat extends Block {
 	}
 }
 
-export default Chat;
+export default () => new Chat();

@@ -7,7 +7,7 @@ class EditableForm extends Block {
 	constructor(props) {
 		super({
 			...props,
-			Form: new Input({
+			Form: Input({
 				id: props.id,
 				name: props.name,
 				value: props.value,
@@ -34,4 +34,4 @@ class EditableForm extends Block {
 	}
 }
 
-export default EditableForm;
+export default (props) => new EditableForm(props);

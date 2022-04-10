@@ -8,20 +8,20 @@ class Chats extends Block {
 
 		super({
 			...props,
-			SettingModal: new ModalButton({
+			SettingModal: ModalButton({
 				id: 'setting-modal',
 				position: 'top',
 				icon: 'setting',
 				list: [ { link: '/account', title: 'Account', icon: 'user' }, { link:'/', title: 'Sign out', icon: 'signOut' } ]
 			}),
-			CreatingChatModal: new ModalButton({
+			CreatingChatModal: ModalButton({
 				id: 'creating-chat',
 				isCreatingChat: true,
 				position: 'bottom',
 				icon: 'pencil',
 				list: [ { link: '/create-chat', title: 'Create chat', icon: 'chat' } ]
 			}),
-			Conversations: new List({ items: LIST.map(props => new Conversation(props)), name: 'Conversations' })
+			Conversations: List({ items: LIST.map(props => Conversation(props)), name: 'Conversations' })
 		});
 	}
 	render() {
@@ -40,4 +40,4 @@ class Chats extends Block {
 	}
 }
 
-export default Chats;
+export default (props) => new Chats(props);

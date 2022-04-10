@@ -5,8 +5,8 @@ class Account extends Block {
 	constructor(props) {
 		super({
 			...props,
-			Chats: new Chats(),
-			User: new User()
+			Chats: Chats(),
+			User: User()
 		});
 	}
 	render() {
@@ -21,4 +21,4 @@ class Account extends Block {
 	}
 }
 
-export default Account;
+export default () =>  new Account();

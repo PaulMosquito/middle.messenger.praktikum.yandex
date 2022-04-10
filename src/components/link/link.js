@@ -2,9 +2,6 @@ import Block from '../../core/Block';
 import './link.css';
 
 class Link extends Block {
-	constructor(props) {
-		super(props);
-	}
 	render() {
 		const { link, title, isButton } = this.props;
 
@@ -18,4 +15,4 @@ class Link extends Block {
 	}
 }
 
-export default Link;
+export default (props) => new Link(props);

@@ -6,7 +6,7 @@ class ModalRow extends Block {
 	constructor(props) {
 		super({
 			...props,
-			Icon: new SVG({ width: '22px', height: '22px', icon: props.icon })
+			Icon: SVG({ width: '22px', height: '22px', icon: props.icon })
 		});
 	}
 	render() {
@@ -24,4 +24,4 @@ class ModalRow extends Block {
 	}
 }
 
-export default ModalRow;
+export default (props) => new ModalRow(props);

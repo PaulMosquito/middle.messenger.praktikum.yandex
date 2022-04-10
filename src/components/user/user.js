@@ -6,16 +6,16 @@ class User extends Block {
 	constructor(props) {
 		super({
 			...props,
-			PhotoIcon: new SVG({ width: '40px', height: '40px', icon: 'photo' }),
-			CloseIcon: new SVG({ icon: 'close' }),
-			NameForm: new EditableForm({ id: 'name', name: 'Name', value: 'Dsadpsa', edit: true }),
-			LastNameForm: new EditableForm({ id: 'last-name', name: 'Last Name', value: 'Kdsadsaew', edit: true }),
-			LoginForm: new EditableForm({ id: 'login', name: 'Login', value: 'dsassdsa', edit: true }),
-			MailForm: new EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true }),
-			PhoneNumberForm: new EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true }),
-			EditProfileLink: new Link({ link: '/edit-profile', title: 'Edit profile' }),
-			ChangePasswordLink: new Link({ link: '/change-password', title: 'Change password' }),
-			SignOutLink: new Link({ link: '/', title: 'Sign Out' })
+			PhotoIcon: SVG({ width: '40px', height: '40px', icon: 'photo' }),
+			CloseIcon: SVG({ icon: 'close' }),
+			NameForm: EditableForm({ id: 'name', name: 'Name', value: 'Dsadpsa', edit: true }),
+			LastNameForm: EditableForm({ id: 'last-name', name: 'Last Name', value: 'Kdsadsaew', edit: true }),
+			LoginForm: EditableForm({ id: 'login', name: 'Login', value: 'dsassdsa', edit: true }),
+			MailForm: EditableForm({ id: 'mail', name: 'Mail',  value: 'dsads@yandex.r', edit: true }),
+			PhoneNumberForm: EditableForm({ id: 'phone-number', name: 'Phone number', value: '+79101032243', edit: true }),
+			EditProfileLink: Link({ link: '/edit-profile', title: 'Edit profile' }),
+			ChangePasswordLink: Link({ link: '/change-password', title: 'Change password' }),
+			SignOutLink: Link({ link: '/', title: 'Sign Out' })
 		});
 	}
 	render() {
@@ -44,4 +44,4 @@ class User extends Block {
 	}
 }
 
-export default User;
+export default props => new User(props);

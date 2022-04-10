@@ -14,4 +14,4 @@ class Message extends Block {
 	}
 }
 
-export default Message;
+export default props => new Message(props);

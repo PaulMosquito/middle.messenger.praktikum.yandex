@@ -14,4 +14,4 @@ class Title extends Block {
 	}
 }
 
-export default Title;
+export default props => new Title(props);

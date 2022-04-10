@@ -11,24 +11,8 @@ class ModalButton extends Block {
 				id: props.id,
 				list: props.list,
 				position: props.position
-			})
-		});
-	}
-
-	render() {
-		const { id, icon='', isCreatingChat, list } = this.props;
-
-		return this.compile(`
-			button(id=id, class=className)
-				if icon
-					#{SVG}
-				if list
-					#{Modal}
-        `, {
-			className: `modal-button ${isCreatingChat ? 'modal-button__creating-chat' : 'modal-button__icon'}`,
-			icon,
-			id: `${id}-button`,
-			list,
+			}),
+			className: `modal-button ${props.isCreatingChat ? 'modal-button__creating-chat' : 'modal-button__icon'}`,
 			events: {
 				click: () => {
 					const { id } = this.props;
@@ -37,6 +21,16 @@ class ModalButton extends Block {
 				}
 			}
 		});
+	}
+
+	render() {
+		return this.compile(`
+			button(id=id, class=className)
+				if icon
+					#{SVG}
+				if list
+					#{Modal}
+        `);
 	}
 }
 

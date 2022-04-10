@@ -17,10 +17,7 @@ class ModalRow extends Block {
 				div.modal__row__icon
 					#{Icon}
 				span=title
-        `, {
-			link,
-			title
-		});
+        `);
 	}
 }
 

@@ -1,28 +1,39 @@
 import Block from '../../core/Block';
-import { Title, Input, Link, List } from '../';
+import { Title, Input, Link } from '../';
 import './loginForm.css';
 
 class LoginForm extends Block {
 	constructor(props) {
-
-		const Inputs = List({ items: props.inputs.map(inputProps => Input(inputProps)), name: 'Inputs' });
-		const Links = List({ items: props.links.map(inputProps => Link(inputProps)), name: 'Links' });
-
 		super({
 			...props,
-			Title: Title(props.title),
-			Inputs,
-			Links
+			...props.inputs.reduce((acc, props, index) => ({
+				...acc,
+				[`Input_${index}`]: Input(props)
+			}), {}),
+			...props.links.reduce((acc, props, index) => ({
+				...acc,
+				[`Link_${index}`]: Link(props)
+			}), {}),
+			Title: Title(props.title)
 		});
 	}
 	render() {
+		const InputList = this.props.inputs.reduce((acc, curr, index) => (
+			`${acc}			
+	#{Input_${index}}
+`), '');
+
+		const LinkList = this.props.links.reduce((acc, curr, index) => (
+			`${acc}			
+	#{Link_${index}}
+`), '');
 		return this.compile(`
             div.login-form
                 div.login-form__wrapper
                     #{Title}
                     div.login-form__wrapper__inputs
-                        #{Inputs}
-                    #{Links}
+						${InputList}
+					${LinkList}
     
         `);
 	}

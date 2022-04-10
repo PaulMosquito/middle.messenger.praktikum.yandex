@@ -34,3 +34,6 @@
 .input-form__input:not(:placeholder-shown) + .input-form__legend {
   visibility: visible;
 }
+.input-form__error {
+  color: var(--error);
+}

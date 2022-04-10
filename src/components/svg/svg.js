@@ -2,13 +2,13 @@ import Block from '../../core/Block';
 import { ICONS } from '../icons/icons';
 
 class SVG extends Block {
+	constructor({ width='18px', height='18px', icon }) {
+		super({ width, height, icon });
+	}
 	render() {
-		const { width='18px', height='18px', icon } = this.props;
+		const { icon } = this.props;
 
-		return this.compile(ICONS[icon], {
-			height,
-			width
-		});
+		return this.compile(ICONS[icon]);
 	}
 }
 

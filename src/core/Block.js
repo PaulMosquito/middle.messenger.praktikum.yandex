@@ -28,14 +28,19 @@ export default class Block {
 			props
 		};
 
+		this.getStateFromProps(props);
 		this.props = this._makePropsProxy({ ...props, __id: this._id });
-		this.state = {};
+		this.state = this._makePropsProxy(this.state);
 
 		this.eventBus = () => eventBus;
 
 		this._registerEvents(eventBus);
 		eventBus.emit(Block.EVENTS.INIT, this.props);
 
+	}
+
+	getStateFromProps(props) {
+		this.state = {};
 	}
 
 	_registerEvents(eventBus) {
@@ -68,7 +73,7 @@ export default class Block {
 	}
 
 	dispatchComponentDidMount() {
-		this._eventBus().emit(Block.EVENTS.FLOW_CDM);
+		this.eventBus().emit(Block.EVENTS.FLOW_CDM);
 	}
 
 	_componentDidUpdate(oldProps, newProps) {
@@ -99,12 +104,38 @@ export default class Block {
 		const fragment = this.render();
 
 		this._removeEvents();
-		const newElement = fragment;
+		const newElement = fragment.firstElementChild;
 
-		this._element.replaceWith(newElement);
+		this._element?.replaceWith(newElement);
 
 		this._element = newElement;
+
 		this._addEvents();
+	}
+
+	compile(template) {
+		const propsAndStubs = { ...this.state, ...this.props, children: this.children, refs: this.refs };
+
+		Object.entries(this.children).forEach(([ key, child ]) => {
+			propsAndStubs[key] = `div data-id=${child._id}`;
+		});
+
+		const fragment = document.createElement('template');
+
+		template = pug.compile(template.replaceAll('    ', '\t').replaceAll('\n\t\t\t', '\n'));
+		fragment.innerHTML = template(propsAndStubs);
+
+		Object.values(this.children).forEach(child => {
+			const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
+
+			if (!stub) {
+				return;
+			}
+
+			stub.replaceWith(child.getContent());
+		});
+
+		return fragment.content;
 	}
 
 	render() {
@@ -144,33 +175,6 @@ export default class Block {
 				throw new Error('Нет доступа');
 			}
 		});
-	}
-
-	compile(template, props={}) {
-		const propsAndStubs = { ...props };
-
-		Object.entries(this.children).forEach(([ key, child ]) => {
-			propsAndStubs[key] = `div data-id=${child._id}`;
-		});
-
-		const fragment = this._createDocumentElement('template');
-
-		fragment.innerHTML = pug.render(template.replaceAll('    ', '\t').replaceAll('\n\t\t\t', '\n'), propsAndStubs);
-
-
-		Object.values(this.children).forEach(child => {
-			const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
-
-			if (!stub) {
-				return;
-			}
-
-			stub.replaceWith(child.getContent());
-		});
-
-
-		return fragment.content;
-
 	}
 
 	_getChildren(propsAndChildren) {
@@ -222,7 +226,7 @@ export default class Block {
 		}
 
 		Object.entries(events).forEach(([ event, listener ]) => {
-			this._element.firstElementChild.addEventListener(event, listener);
+			this._element.addEventListener(event, listener);
 		});
 	}
 

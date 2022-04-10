@@ -16,8 +16,6 @@ class EditableForm extends Block {
 		});
 	}
 	render() {
-		const { id, name='', value='', edit } = this.props;
-
 		return this.compile(`
             if edit
                 #{Form}
@@ -25,12 +23,7 @@ class EditableForm extends Block {
                 .editable-form
                     .editable-form__name=name
                     .editable-form__value=value
-        `, {
-			id,
-			name,
-			value,
-			edit
-		});
+        `);
 	}
 }
 

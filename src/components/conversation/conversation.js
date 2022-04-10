@@ -3,7 +3,6 @@ import './conversation.css';
 
 class Conversation extends Block {
 	render() {
-		const { name, lastMessage, lastMessageDate, countUnreadMessages } = this.props;
 		return this.compile(`
             div.conversation 
                 div.conversation__logo
@@ -18,13 +17,7 @@ class Conversation extends Block {
                     if countUnreadMessages > 0 
                         div.conversation__unread-message-and-date__unread-messages
                             div.conversation__unread-message-and-date__unread-messages__count=countUnreadMessages > 99 ? '99+' : countUnreadMessages 
-		`,
-		{
-			name,
-			lastMessage,
-			lastMessageDate,
-			countUnreadMessages
-		});
+		`);
 	}
 }
 

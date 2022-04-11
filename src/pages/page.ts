@@ -1,85 +1,83 @@
 import Block from '../core/Block';
 import {
-	Account,
-	Auth,
-	Chat,
-	EditProfile,
-	Error,
-	Login
-} from './';
+    Account,
+    Auth,
+    Chat,
+    EditProfile,
+    Error,
+    Login,
+} from '.';
 import './page.css';
 
 const PAGES = {
-	'/auth': `
+    '/auth': `
 #{Auth}
 `,
-	'/chat': `
+    '/chat': `
 #{Chat}
 `,
-	'/editprofile': `
+    '/editprofile': `
 #{EditProfile}
 `,
-	'/error': `
+    '/error': `
 #{Error}
 `,
-	'/login': `
+    '/login': `
 #{Login}
 `,
-	'/': `
+    '/': `
 #{Login}
 `,
-	'/account': `#{Account}
-`
+    '/account': `#{Account}
+`,
 } as any;
 
 const NAME_PAGE_BY_PATHNAMES = {
-	'/': 'Login',
-	'/auth': 'Auth',
-	'/chat': 'Chat',
-	'/edit-profile': 'EditProfile',
-	'/login': 'Login',
-	'/account': 'Account'
+    '/': 'Login',
+    '/auth': 'Auth',
+    '/chat': 'Chat',
+    '/edit-profile': 'EditProfile',
+    '/login': 'Login',
+    '/account': 'Account',
 } as any;
 
 const PAGE_BY_PATHNAMES = {
-	'/': Login(),
-	'/auth': Auth(),
-	'/chat': Chat(),
-	'/edit-profile': EditProfile(),
-	'/login': Login(),
-	'/account': Account()
+    '/': Login(),
+    '/auth': Auth(),
+    '/chat': Chat(),
+    '/edit-profile': EditProfile(),
+    '/login': Login(),
+    '/account': Account(),
 } as any;
 
 class Page extends Block {
-	constructor() {
-		const { pathname } = document.location as Location;
+    constructor() {
+        const { pathname } = document.location as Location;
 
+        if (NAME_PAGE_BY_PATHNAMES[pathname]) {
+            const Component = PAGE_BY_PATHNAMES[pathname];
 
-		if (NAME_PAGE_BY_PATHNAMES[pathname]) {
-			const Component = PAGE_BY_PATHNAMES[pathname] ;
+            super({
+                [NAME_PAGE_BY_PATHNAMES[pathname]]: Component,
+            });
+        } else {
+            super({
+                Error: Error({ errorCode: 404 }),
+            });
+        }
+    }
 
-			super({
-				[NAME_PAGE_BY_PATHNAMES[pathname]]:Component
-			});
-		} else {
-			super({
-				Error: Error({ errorCode: 404 })
-			});
-		}
+    render() {
+        const template:string | undefined = PAGES[document.location.pathname];
 
+        if (template) {
+            return this.compile(template);
+        }
 
-	}
-	render() {
-		const template:string|undefined = PAGES[document.location.pathname];
-
-		if (template) {
-			return this.compile(template);
-		}
-
-		return this.compile(`
+        return this.compile(`
             #{Error}
         `);
-	}
+    }
 }
 
 export default Page;

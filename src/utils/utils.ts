@@ -1,62 +1,61 @@
 export const checkName = (str = ''):boolean => {
-	const string = str.trim();
+    const string = str.trim();
 
-	if (!str.length) {
-		return false;
-	}
+    if (!str.length) {
+        return false;
+    }
 
-	for(let i = 0; i < string.length; i++ ) {
-		if (!string[0].match(/^[А-ЯA-Z]/)) {
-			return false;
-		}
+    for (let i = 0; i < string.length; i += 1) {
+        if (!string[0].match(/^[А-ЯA-Z]/)) {
+            return false;
+        }
 
-		if (string[0].match(/^[А-Я]/)) {
-			if (i > 0) {
-				if (!string[i].match(/[а-яА-ЯёЁ]|-/)) {
-					return false;
-				}
-			}
-		}
+        if (string[0].match(/^[А-Я]/)) {
+            if (i > 0) {
+                if (!string[i].match(/[а-яА-ЯёЁ]|-/)) {
+                    return false;
+                }
+            }
+        }
 
-		if (string[0].match(/[A-Z]/)) {
-			if (i > 0) {
-				if (!string[i].match(/[a-zA-Z]|-/)) {
-					return false;
-				}
-			}
-		}
-	}
-	return true;
+        if (string[0].match(/[A-Z]/)) {
+            if (i > 0) {
+                if (!string[i].match(/[a-zA-Z]|-/)) {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
 };
 
-
 export const checkLogin = (str = ''):boolean => {
-	const string = str.trim();
+    const string = str.trim();
 
-	if (string.length < 3 || string.length > 20) {
-		return false;
-	}
+    if (string.length < 3 || string.length > 20) {
+        return false;
+    }
 
-	if (string.match(/^\d+$/))  {
-		return false;
-	}
+    if (string.match(/^\d+$/)) {
+        return false;
+    }
 
-	for(let i = 0; i < string.length; i++ ) {
-		if (!string[i].match(/[a-zA-Z]|-|_|\d/)) {
-			return false;
-		}
-	}
+    for (let i = 0; i < string.length; i += 1) {
+        if (!string[i].match(/[a-zA-Z]|-|_|\d/)) {
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 };
 
 export const checkPassword = (str = ''):boolean => !!str.match(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,40}$/);
 
 // От 10 до 15 символов, состоит из цифр в начале может быть "+"
-export const checkPhone = (str =''):boolean => !!str.match(/^[+|\d]\d{10,15}$/);
+export const checkPhone = (str = ''):boolean => !!str.match(/^[+|\d]\d{10,15}$/);
 
 // Не должен быть пустым
-export const checkMessage = (str =''):boolean => !!str.match(/.+/);
+export const checkMessage = (str = ''):boolean => !!str.match(/.+/);
 
 /**
  * Латиница, может включать цифры, спецсимволы

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import Block from '../core/Block';
 import {
 	Account,
@@ -6,30 +5,30 @@ import {
 	Chat,
 	EditProfile,
 	Error,
-	Login,
+	Login
 } from './';
 import './page.css';
 
 const PAGES = {
-    '/auth': `
+	'/auth': `
 #{Auth}
 `,
-    '/chat': `
+	'/chat': `
 #{Chat}
 `,
-    '/editprofile': `
+	'/editprofile': `
 #{EditProfile}
 `,
-    '/error': `
+	'/error': `
 #{Error}
 `,
-    '/login': `
+	'/login': `
 #{Login}
 `,
 	'/': `
 #{Login}
 `,
-    '/account': `#{Account}
+	'/account': `#{Account}
 `
 } as any;
 
@@ -54,30 +53,30 @@ const PAGE_BY_PATHNAMES = {
 class Page extends Block {
 	constructor() {
 		const { pathname } = document.location as Location;
-		
+
 
 		if (NAME_PAGE_BY_PATHNAMES[pathname]) {
 			const Component = PAGE_BY_PATHNAMES[pathname] ;
-			
+
 			super({
 				[NAME_PAGE_BY_PATHNAMES[pathname]]:Component
 			});
 		} else {
 			super({
-				Error: Error({errorCode: 404})
+				Error: Error({ errorCode: 404 })
 			});
 		}
 
-		
+
 	}
 	render() {
-        const template:string|undefined = PAGES[document.location.pathname];
+		const template:string|undefined = PAGES[document.location.pathname];
 
-        if (template) {
-            return this.compile(template);
-        }
+		if (template) {
+			return this.compile(template);
+		}
 
-        return this.compile(`
+		return this.compile(`
             #{Error}
         `);
 	}

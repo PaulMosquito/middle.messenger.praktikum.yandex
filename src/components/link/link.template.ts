@@ -1,3 +1,3 @@
 export default `
-			a(href=link class=className)=title
-`
+a(href=link class=className)=title
+`;

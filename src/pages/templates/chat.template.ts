@@ -1,8 +1,8 @@
 export default `
-			div.page
-				div.left-block
-					#{Chats}
+div.page
+	div.left-block
+		#{Chats}
 
-				div.right-block
-					#{Lenta}
-`
+	div.right-block
+		#{Lenta}
+`;

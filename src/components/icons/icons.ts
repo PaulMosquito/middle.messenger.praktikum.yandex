@@ -1,4 +1,3 @@
-/* eslint-disable */
 const ARROW = `
 svg#arrowRoot(width=width height=height fill='none' xmlns='http://www.w3.org/2000/svg')
   path(fill='#fff' d='M0 5.2h11v1.6H0z')

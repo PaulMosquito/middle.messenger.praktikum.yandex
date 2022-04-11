@@ -35,28 +35,17 @@ class Input extends Block {
 			value,
 			error,
 			events: {
-				focusin: (event: Event & {
-					target: HTMLInputElement
-				}) => {
-					const { value } = event.target;
-
-					const isError = !checkValue(value);
-
-					if (isError) {
-						console.log(`Error - ${value}`);
-					} else {
-						console.log(`${name} field - ${value}`);
-					}
-				},
 				focusout: (event: Event & {
 					target: HTMLInputElement
 				}) => {
-					const { value } = event.target;
+					const { value } = event.target;
 					const isError = !checkValue(value);
 
-					if (!isError) {
+					if (isError) {
+						/* eslint-disable-next-line no-console*/
 						console.log(`Error - ${value}`);
 					} else {
+						/* eslint-disable-next-line no-console*/
 						console.log(`${name} field - ${value}`);
 					}
 				},

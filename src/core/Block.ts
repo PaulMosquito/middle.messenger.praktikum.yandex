@@ -2,6 +2,8 @@ import EventBus from './EventBus';
 import { v4 as uuidv4 } from 'uuid';
 import { render } from 'pug';
 
+export type Keys<T extends Record<string, unknown>> = keyof T;
+export type Values<T extends Record<string, unknown>> = T[Keys<T>];
 type Events = Values<typeof Block.EVENTS>;
 interface BlockMeta<P = any> {
 	tagName: string,
@@ -22,12 +24,12 @@ export default class Block<P = any> {
 		tagName: string,
 		props: P
 	} = null;
-	  
+
 	_id = uuidv4();
 	children: {[id: string]: Block} = {};
 	props={};
 	state={};
-	events: Record<string, () => {}>;
+	events: Record<string, any>;
 	eventBus: () => EventBus<Events>;
 
 	constructor(propsAndChildren:P, tagName='div') {
@@ -135,8 +137,9 @@ export default class Block<P = any> {
 
 		const fragment = document.createElement('template');
 
-		fragment.innerHTML = render(template.replaceAll('    ', '\t').replaceAll('\n\t\t\t', '\n'), propsAndStubs);
+		fragment.innerHTML = render(template, propsAndStubs);
 
+		console.log(render(template, propsAndStubs));
 		Object.values(this.children).forEach(child => {
 			const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
 
@@ -169,7 +172,6 @@ export default class Block<P = any> {
 	}
 
 	_makePropsProxy(props:any) {
-		/* eslint-disable @typescript-eslint/no-this-alias */
 		const self = this;
 
 		return new Proxy(props, {

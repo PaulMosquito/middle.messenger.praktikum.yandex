@@ -88,7 +88,6 @@
 		"no-unsafe-negation": 2,
 		"no-unsafe-optional-chaining": 2,
 		"no-unused-labels": 2,
-		"no-unused-vars": 2,
 		"no-useless-backreference": 2,
 		"no-useless-catch": 2,
 		"no-useless-escape": 2,
@@ -104,10 +103,15 @@
 		"comma-style": 2,
 		"default-case": 2,
 		"func-call-spacing": 2,
-		"max-len": ["error", { "code": 190 }],
 		"no-console": 2,
 		"no-else-return": 2,
 		"no-whitespace-before-property": 2,
 		"no-trailing-spaces": 2,
+		"@typescript-eslint/no-this-alias": [
+			"error",
+			{
+			  "allowedNames": ["self"]
+			}
+		  ]
 	}
 }

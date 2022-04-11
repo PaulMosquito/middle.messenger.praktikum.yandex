@@ -50,25 +50,7 @@ export const checkLogin = (str = ''):boolean => {
 	return true;
 };
 
-export const checkPassword = (str = ''):boolean => {
-	const string = str.trim();
-
-	if (string.length < 8 || string.length > 40) {
-		return false;
-	}
-
-	if (string.match(/^\d+$/))  {
-		return false;
-	}
-
-	for(let i = 0; i < string.length; i++ ) {
-		if (!string[i].match(/[a-zA-Z]|-|_|\d/)) {
-			return false;
-		}
-	}
-
-	return true;
-};
+export const checkPassword = (str = ''):boolean => !!str.match(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,40}$/);
 
 // От 10 до 15 символов, состоит из цифр в начале может быть "+"
 export const checkPhone = (str =''):boolean => !!str.match(/^[+|\d]\d{10,15}$/);

@@ -60,9 +60,9 @@ svg#userRoot(width=width height=height fill='none' xmlns='http://www.w3.org/2000
   path(d='M3.271 17.346S5.5 14.5 11 14.5s7.73 2.846 7.73 2.846M11 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6v0Z' stroke='#000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
 `;
 
-type Names = 'arrow' | 'basket' | 'chat' | 'close' | 'pencil' | 'photo' | 'setting' | 'settingDots' | 'signOut' | 'unread' | 'user';
+export type IconNames = 'arrow' | 'basket' | 'chat' | 'close' | 'pencil' | 'photo' | 'setting' | 'settingDots' | 'signOut' | 'unread' | 'user';
 
-export const ICONS: Record<Names, string>  = {
+export const ICONS: Record<IconNames, string>  = {
 	arrow: ARROW,
 	basket: BASKET,
 	chat: CHAT,

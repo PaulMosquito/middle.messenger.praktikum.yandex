@@ -108,6 +108,6 @@
 		"no-console": 2,
 		"no-else-return": 2,
 		"no-whitespace-before-property": 2,
-		"no-trailing-spaces": 2
+		"no-trailing-spaces": 2,
 	}
 }

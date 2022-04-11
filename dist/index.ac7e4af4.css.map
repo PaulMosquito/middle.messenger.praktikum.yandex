@@ -1,0 +1,1 @@
+{"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA","sources":["src/components/title/title.css"],"sourcesContent":[".title {\n  font-size: 18px;\n  margin-bottom: 8px;\n}\n.title_center {\n  text-align: center;\n}\n"],"names":[],"version":3,"file":"index.ac7e4af4.css.map","sourceRoot":"/__parcel_source_root/"}

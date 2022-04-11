@@ -18,12 +18,67 @@ class Auth extends Block {
             Phone: Input({ name: 'Phone number', checkValue: checkPhone } as InputProps),
             Password: Input({ name: 'Password', type: 'password', checkValue: checkPassword }),
             RepeatPassword: Input({ name: 'Repeat password', type: 'password', checkValue: checkPassword }),
-            Auth: Link({ link: './chat.pug', title: 'Let\'s go!', isButton: true }),
             SignIn: Link({ link: '/', title: 'Sign in' }),
         });
     }
 
     render() {
+        this.children.Auth = Link({
+            link: '/auth',
+            title: 'Let\'s go!',
+            isButton: true,
+            events: {
+                click: (event: Event) => {
+                    const {
+                        FirstName,
+                        SecondName,
+                        Login,
+                        Email,
+                        Phone,
+                        Password,
+                        RepeatPassword,
+                    } = this.children;
+
+                    const errorComponentNames = [
+                        FirstName,
+                        SecondName,
+                        Login,
+                        Email,
+                        Phone,
+                        Password,
+                        RepeatPassword,
+                    ].filter(({ state: { error } }:any) => error)
+                        .map(({ props: { name } }:any) => name);
+
+                    const emptyComponentNames = [
+                        FirstName,
+                        SecondName,
+                        Login,
+                        Email,
+                        Phone,
+                        Password,
+                        RepeatPassword,
+                    ].filter(({ state: { value } }:any) => !value)
+                        .map(({ props: { name } }:any) => name);
+
+                    if (errorComponentNames.length || emptyComponentNames.length) {
+                        errorComponentNames.forEach((component) => {
+                            console.log(`Error validate in ${component}`);
+                        });
+
+                        emptyComponentNames.forEach((component) => {
+                            console.log(`Error empty value. Value isn't defined in ${component}`);
+                        });
+
+                        event.preventDefault();
+                        return false;
+                    }
+
+                    return true;
+                },
+            },
+        });
+
         return this.compile(template);
     }
 }

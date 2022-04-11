@@ -9,6 +9,8 @@ https://github.com/PaulMosquito/middle.messenger.praktikum.yandex/pull/2
 
 - `npm install` — установка стабильной версии,
 - `npm start` — запуск версии для разработчика,
+- `npm run lint` — запуск линтера для *.js & *.ts,
+- `npm run lint:style` — запуск линтера для *.css & *.less,
 - `npm run build` — сборка стабильной версии.
 
 ## Макет

@@ -1,19 +1,17 @@
 .editable-form {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: inherit;
+	border-bottom: 1px solid var(--light-border);
+	padding: 1rem 0;
+	font-size: var(--font-m);
 
-    width: inherit;
+	&__name {
+		color: var(--grey);
+	}
 
-    border-bottom: 1px solid #EAEAEA;
-    padding: 1rem 0;
-
-    font-size: 16px;
-    
-    &__name {
-        color: #999999;
-    }    
-    &__value {
-        color: #000000;
-    }
+	&__value {
+		color: var(--black);
+	}
 }

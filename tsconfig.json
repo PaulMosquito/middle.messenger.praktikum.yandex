@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "incremental": true,
+      "target": "es2016",
+      "module": "commonjs",
+      "sourceMap": true,
+      "outDir": "./tsc-artifacts",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "useUnknownInCatchVariables": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noImplicitOverride": true,
+      "skipLibCheck": true,
+      "typeRoots": ["node_modules/@types", "typings/app.d.ts"]
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+}

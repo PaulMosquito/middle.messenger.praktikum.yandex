@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "test",
-    "start": "node scripts/server.js",
+    "lint": "eslint ./src/**/*.ts --fix",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
+    "start": "parcel src/index.html --no-source-maps --no-cache --port 3000",
     "build": "parcel build --no-cache src/pages/index.pug"
   },
   "repository": {
@@ -23,8 +25,32 @@
   "homepage": "https://github.com/PaulMosquito/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
     "@parcel/transformer-pug": "2.2.1",
+    "@types/pug": "2.0.6",
+    "@types/uuid": "8.3.4",
+    "@typescript-eslint/eslint-plugin": "5.17.0",
+    "@typescript-eslint/parser": "5.17.0",
+    "assert": "2.0.0",
+    "buffer": "6.0.3",
+    "eslint": "8.12.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.0.0",
     "express": "4.17.2",
     "less": "4.1.2",
-    "parcel": "2.2.1"
+    "os-browserify": "0.3.0",
+    "parcel": "2.2.1",
+    "path-browserify": "1.0.1",
+    "postcss-less": "6.0.0",
+    "process": "0.11.10",
+    "stylelint": "14.6.1",
+    "stylelint-config-hudochenkov": "6.0.1",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-recommended-less": "1.0.4",
+    "stylelint-config-standard": "25.0.0",
+    "stylelint-less": "1.0.5",
+    "typescript": "4.6.3"
+  },
+  "dependencies": {
+    "pug": "3.0.2",
+    "uuid": "8.3.2"
   }
 }

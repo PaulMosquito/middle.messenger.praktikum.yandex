@@ -3,10 +3,11 @@ import template from './link.template';
 import './link.css';
 
 export type LinkProps = {
-    link: string,
-    title: string,
-    className?: string,
-    isButton?: boolean
+    link: string;
+    title: string;
+    className?: string;
+    isButton?: boolean;
+    events?: any
 };
 class Link extends Block {
     constructor(props:LinkProps) {

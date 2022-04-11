@@ -35,16 +35,18 @@ class Input extends Block {
             value,
             error,
             events: {
+                // только на focusout иначе будет перерендер и теряется фокус
                 focusout: (event: Event & {
                     target: HTMLInputElement
                 }) => {
                     const isError = !checkValue(event.target.value);
 
+                    this.setState({ value: event.target.value });
+
                     if (isError) {
-                        /* eslint-disable-next-line no-console */
                         console.log(`Error - ${event.target.value}`);
+                        this.setState({ error: true });
                     } else {
-                        /* eslint-disable-next-line no-console */
                         console.log(`${name} field - ${event.target.value}`);
                     }
                 },

@@ -10,7 +10,7 @@ div.lenta
 		${Messages}
 			
 	footer.lenta__footer
-		div(class="type-message" contenteditable="true")
+		#{LentaMessage}
 		div(class="send-message")
 			#{Icon}
 `;

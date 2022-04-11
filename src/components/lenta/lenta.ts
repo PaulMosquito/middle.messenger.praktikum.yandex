@@ -1,9 +1,14 @@
 import Block from '../../core/Block';
 import { ModalButton, Message, SVG } from '..';
+import LentaMessage from './lenta-message';
 import CONVERSATION from './_mock';
+import { checkMessage } from '../../utils/utils';
 import template from './lenta.template';
 import './lenta.css';
 
+type State = {
+    value: string
+};
 class Lenta extends Block {
     constructor() {
         super({
@@ -21,11 +26,46 @@ class Lenta extends Block {
         });
     }
 
+    getStateFromProps() {
+        this.state = {
+            value: '',
+        };
+    }
+
     render() {
+        const { value } = this.state as State;
+
         const Messages = CONVERSATION.reduce((acc:string, _:any, index:number) => (
             `${acc}			
 		#{Message_${index}}
 `), '');
+
+        this.children.LentaMessage = LentaMessage({
+            value,
+            events: {
+                focusout: (event: Event & {
+                    target: HTMLInputElement
+                }) => {
+                    const isError = !checkMessage(event.target.innerText);
+
+                    if (isError) {
+                        /* eslint-disable-next-line no-console */
+                        console.log(`Error - ${event.target.innerText}`);
+                    } else {
+                        /* eslint-disable-next-line no-console */
+                        console.log(`Message field - ${event.target.innerText}`);
+                    }
+                },
+                keyup: (event: KeyboardEvent & Event & {
+                    target: HTMLInputElement
+                }) => {
+                    if (event.key === 'Escape') {
+                        this.setState({ value: '', error: '' });
+                    }
+                },
+            },
+        });
+
         return this.compile(template(Messages));
     }
 }

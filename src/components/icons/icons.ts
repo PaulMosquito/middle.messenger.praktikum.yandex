@@ -61,30 +61,30 @@ svg#userRoot(width=width height=height fill='none' xmlns='http://www.w3.org/2000
 
 export type IconNames = 'arrow' | 'basket' | 'chat' | 'close' | 'pencil' | 'photo' | 'setting' | 'settingDots' | 'signOut' | 'unread' | 'user';
 
-export const ICONS: Record<IconNames, string>  = {
-	arrow: ARROW,
-	basket: BASKET,
-	chat: CHAT,
-	close: CLOSE,
-	pencil: PENCIL,
-	photo: PHOTO,
-	setting: SETTING,
-	settingDots: SETTING_DOTS,
-	signOut: SIGN_OUT,
-	unread: UNREAD,
-	user: USER
+export const ICONS: Record<IconNames, string> = {
+    arrow: ARROW,
+    basket: BASKET,
+    chat: CHAT,
+    close: CLOSE,
+    pencil: PENCIL,
+    photo: PHOTO,
+    setting: SETTING,
+    settingDots: SETTING_DOTS,
+    signOut: SIGN_OUT,
+    unread: UNREAD,
+    user: USER,
 };
 
 export default {
-	ARROW,
-	BASKET,
-	CHAT,
-	CLOSE,
-	PENCIL,
-	PHOTO,
-	SETTING_DOTS,
-	SETTING,
-	SIGN_OUT,
-	UNREAD,
-	USER
+    ARROW,
+    BASKET,
+    CHAT,
+    CLOSE,
+    PENCIL,
+    PHOTO,
+    SETTING_DOTS,
+    SETTING,
+    SIGN_OUT,
+    UNREAD,
+    USER,
 };

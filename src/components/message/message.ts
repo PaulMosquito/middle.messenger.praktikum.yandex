@@ -6,11 +6,11 @@ type MessageProps = {
     isMe?: boolean;
     date: string;
     message: string;
-}
+};
 class Message extends Block {
-	render() {
-		return this.compile(template);
-	}
+    render() {
+        return this.compile(template);
+    }
 }
 
 export default (props:MessageProps) => new Message(props);

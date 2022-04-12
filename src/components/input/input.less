@@ -29,6 +29,16 @@
 		}
 	}
 
+	&__input_error {
+		width: 100%;
+		box-sizing: border-box;
+		outline: 0;
+		border: 0;
+		border-bottom: 1px solid var(--error);
+		padding: 4px 0;
+		font-size: var(--font-m);
+	}
+
 	&__legend {
 		visibility: hidden;
 		color: var(--grey);
@@ -36,11 +46,12 @@
 		font-size: var(--font-s);
 	}
 
-	&__input:not(:placeholder-shown) + &__legend {
+	&__input:not(:placeholder-shown) + &__legend,
+	&__input_error:not(:placeholder-shown) + &__legend {
 		visibility: visible;
 	}
 
-	&__error {
+	&__error {	
 		color: var(--error);
 	}
 }

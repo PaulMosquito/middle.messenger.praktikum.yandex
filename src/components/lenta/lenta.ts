@@ -1,8 +1,9 @@
 import Block from '../../core/Block';
 import { ModalButton, Message, SVG } from '..';
 import LentaMessage from './lenta-message';
+import ButtonSubmit from './button-submit';
 import CONVERSATION from './_mock';
-import { checkMessage } from '../../utils/utils';
+import { checkMessage } from '../../utils/validation';
 import template from './lenta.template';
 import './lenta.css';
 
@@ -50,7 +51,7 @@ class Lenta extends Block {
 
                     if (isError) {
                         /* eslint-disable-next-line no-console */
-                        console.log(`Error - ${event.target.innerText}`);
+                        console.log('Error: message is empty');
                     } else {
                         /* eslint-disable-next-line no-console */
                         console.log(`Message field - ${event.target.innerText}`);
@@ -62,6 +63,14 @@ class Lenta extends Block {
                     if (event.key === 'Escape') {
                         this.setState({ value: '', error: '' });
                     }
+                },
+            },
+        });
+
+        this.children.ButtonSubmit = ButtonSubmit({
+            events: {
+                click: () => {
+                    console.log(JSON.stringify({ message: value }));
                 },
             },
         });

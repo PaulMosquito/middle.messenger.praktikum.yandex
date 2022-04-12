@@ -4,6 +4,7 @@ import EventBus from './EventBus';
 
 export type Keys<T extends Record<string, unknown>> = keyof T;
 export type Values<T extends Record<string, unknown>> = T[Keys<T>];
+type Nullable<T> = T | null;
 type Events = Values<typeof Block.EVENTS>;
 export default class Block<P = any> {
     static EVENTS = {
@@ -16,30 +17,26 @@ export default class Block<P = any> {
     _element: HTMLElement | null = null;
 
     _meta:{
-        tagName: string,
         props: P
-    } = null;
+    } | null = null;
 
     _id = uuidv4();
 
-    children: { [id: string]: Block } = {};
+    protected children: { [id: string]: Block } = {};
 
-    props = {};
+    protected props = {};
 
-    state = {};
-
-    events: Record<string, any>;
+    protected state = {};
 
     eventBus: () => EventBus<Events>;
 
-    constructor(propsAndChildren:P, tagName = 'div') {
+    constructor(propsAndChildren:P) {
         const eventBus = new EventBus();
 
         const { children, props = {} } = this._getChildren(propsAndChildren);
 
         this.children = children;
         this._meta = {
-            tagName,
             props,
         };
 
@@ -65,8 +62,7 @@ export default class Block<P = any> {
     }
 
     _createResources() {
-        const { tagName } = this._meta;
-        this._element = this._createDocumentElement(tagName);
+        this._element = this._createDocumentElement('div');
     }
 
     init() {
@@ -154,7 +150,7 @@ export default class Block<P = any> {
         return fragment.content;
     }
 
-    render():DocumentFragment {
+    protected render():DocumentFragment {
         return new DocumentFragment();
     }
 
@@ -169,7 +165,7 @@ export default class Block<P = any> {
             }, 100);
         }
 
-        return this._element;
+        return this._element!;
     }
 
     _makePropsProxy(props:any) {
@@ -229,7 +225,7 @@ export default class Block<P = any> {
         }
 
         Object.entries(events).forEach(([event, listener]) => {
-            this._element.removeEventListener(event, listener);
+            this._element!.removeEventListener(event, listener);
         });
     }
 
@@ -240,12 +236,12 @@ export default class Block<P = any> {
         }
 
         Object.entries(events).forEach(([event, listener]) => {
-            this._element.addEventListener(event, listener);
+            this._element!.addEventListener(event, listener);
         });
     }
 
     show() {
-        this._element.style.display = 'block';
+        this.getContent().style.display = 'block';
     }
 
     hide() {

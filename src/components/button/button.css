@@ -1,0 +1,23 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: 36px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.25rem;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: var(--font-m);
+  background: var(--success);
+}
+.button:hover {
+  background: var(--success-90);
+}
+.button:active {
+  background: var(--success);
+  outline: 3px solid var(--success-30);
+}

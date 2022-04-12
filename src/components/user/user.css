@@ -30,29 +30,6 @@
 .user-info__buttons {
   width: inherit;
 }
-.user-info__buttons__save-button {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: inherit;
-  height: 36px;
-  border: 0;
-  border-radius: 6px;
-  padding: 0.25rem;
-  margin-bottom: 16px;
-  color: var(--white);
-  text-decoration: none;
-  font-size: var(--font-m);
-  background: var(--success);
-}
-.user-info__buttons__save-button:hover {
-  background: var(--success-90);
-}
-.user-info__buttons__save-button:active {
-  background: var(--success);
-  outline: 3px solid var(--success-30);
-}
 .user-info__close {
   cursor: pointer;
   position: absolute;

@@ -7,10 +7,18 @@ type Props = {
     type: string;
     value: string;
     error: string;
-    events: Record<string, any>
+    events: Record<string, any>,
+    disabled?: boolean
 };
 
 class InputForm extends Block {
+    constructor(props: Props) {
+        super({
+            ...props,
+            className: props.error ? 'input-form__input_error' : 'input-form__input',
+        });
+    }
+
     render() {
         return this.compile(template);
     }

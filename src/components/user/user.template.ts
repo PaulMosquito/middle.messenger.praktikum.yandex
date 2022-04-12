@@ -12,11 +12,12 @@ export default `
         #{PhoneNumberForm}
 
     .user-info__buttons
-        #{EditProfileLink}
-        #{ChangePasswordLink}
-        #{SignOutLink}
-
-
+        if editable
+            #{Button}
+        else 
+            #{EditProfileLink}
+            #{ChangePasswordLink}
+            #{SignOutLink}
     a(class="user-info__close" link="/account")
         #{CloseIcon}
 `;

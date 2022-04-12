@@ -12,7 +12,7 @@ export default class EventBus<
 
     __checkCallbackError(event: E, callback: Listener<M[E]>) {
         this.__checkError(event);
-        if (callback && !this.listeners[event].includes(callback)) {
+        if (callback && !this.listeners[event]!.includes(callback)) {
             throw new Error(`${event} doesn't have this callback. ${callback}`);
         }
     }
@@ -32,7 +32,7 @@ export default class EventBus<
             this.listeners[event] = [];
         }
 
-        this.listeners[event].push(callback);
+        this.listeners[event]!.push(callback);
     }
 
     off(event: E, callback: Listener<M[E]>) {
@@ -41,7 +41,7 @@ export default class EventBus<
 
     emit(event: E, ...args: M[E]) {
         this.__checkError(event);
-        this.listeners[event].forEach((listener) => {
+        this.listeners[event]!.forEach((listener) => {
             listener(...args);
         });
     }

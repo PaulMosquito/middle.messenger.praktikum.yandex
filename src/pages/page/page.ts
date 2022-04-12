@@ -43,9 +43,9 @@ class Page extends Block {
         });
     }
 
-    public override getStateFromProps(props: any) {
+    public override getStateFromProps(_: any) {
         this.state = {
-            component: '#{Chat}',
+            component: '#{Login}',
         };
     }
 

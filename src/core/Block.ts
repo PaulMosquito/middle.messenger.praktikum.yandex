@@ -4,7 +4,6 @@ import EventBus from './EventBus';
 
 export type Keys<T extends Record<string, unknown>> = keyof T;
 export type Values<T extends Record<string, unknown>> = T[Keys<T>];
-type Nullable<T> = T | null;
 type Events = Values<typeof Block.EVENTS>;
 
 export default class Block<P = any> {
@@ -51,7 +50,7 @@ export default class Block<P = any> {
         eventBus.emit(Block.EVENTS.INIT, this.props);
     }
 
-    protected getStateFromProps(props: any): void {
+    protected getStateFromProps(_: any): void {
         this.state = {};
     }
 
@@ -79,7 +78,7 @@ export default class Block<P = any> {
         });
     }
 
-    componentDidMount(props: P) {
+    componentDidMount(_: P) {
     }
 
     dispatchComponentDidMount() {
@@ -94,7 +93,7 @@ export default class Block<P = any> {
         this._render();
     }
 
-    componentDidUpdate(oldProps: P, newProps: P) {
+    componentDidUpdate(_oldProps: P, _newProps: P) {
         return true;
     }
 

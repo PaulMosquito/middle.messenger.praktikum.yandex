@@ -10,6 +10,7 @@
     "test": "test",
     "lint": "eslint ./src/**/*.ts --fix",
     "lint:style": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
+    "tsc": "tsc",
     "start": "parcel src/index.html --no-source-maps --no-cache --port 3000",
     "build": "parcel build --no-cache src/index.html"
   },

@@ -43,13 +43,13 @@ class Page extends Block {
         });
     }
 
-    getStateFromProps(props: any) {
+    public override getStateFromProps(props: any) {
         this.state = {
             component: '#{Chat}',
         };
     }
 
-    render() {
+    public override render() {
         const { component } = this.state as { component: string };
         return this.compile(template(component));
     }

@@ -10,7 +10,7 @@ class EditProfile extends Block {
         });
     }
 
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

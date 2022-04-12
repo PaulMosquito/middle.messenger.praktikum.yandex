@@ -10,7 +10,7 @@ class Chat extends Block {
         });
     }
 
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

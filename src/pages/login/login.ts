@@ -1,7 +1,6 @@
 import Block from '../../core/Block';
 import { Title, Input, Link } from '../../components';
-import { checkLogin, checkPassword } from '../../utils/validation';
-import logSubmit from '../../utils/logging';
+import { checkLogin, checkPassword, logSubmit } from '../../utils';
 import { InputProps } from '../../components/input/input';
 import template from './login.template';
 import './login.css';
@@ -27,7 +26,7 @@ class Login extends Block {
         });
     }
 
-    render() {
+    public override render() {
         this.children.SignIn = Link({
             link: '/chat',
             title: 'Sign in',

@@ -25,14 +25,14 @@ class ModalButton extends Block {
             events: {
                 click: () => {
                     const { id } = this.props as ModalButtonProps;
-                    const modal = document.getElementById(id).lastChild as HTMLElement;
+                    const modal = document.getElementById(id)!.lastChild as HTMLElement;
                     modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
                 },
             },
         });
     }
 
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

@@ -3,7 +3,7 @@ import template from './conversation.template';
 import './conversation.css';
 
 class Conversation extends Block {
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

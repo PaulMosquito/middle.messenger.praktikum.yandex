@@ -7,8 +7,8 @@ import {
     checkPassword,
     checkEmail,
     checkPhone,
-} from '../../utils/validation';
-import logSubmit from '../../utils/logging';
+    logSubmit,
+} from '../../utils';
 import template from './auth.template';
 import './auth.css';
 
@@ -64,7 +64,7 @@ class Auth extends Block {
         });
     }
 
-    render() {
+    public override render() {
         this.children.Auth = Link({
             link: '/auth',
             title: 'Let\'s go!',

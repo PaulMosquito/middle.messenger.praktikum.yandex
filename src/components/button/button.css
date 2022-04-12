@@ -21,3 +21,21 @@
   background: var(--success);
   outline: 3px solid var(--success-30);
 }
+.send-message {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--blue);
+  border-radius: 50%;
+  border: 0;
+}
+.send-message:hover {
+  background: var(--blue-90);
+}
+.send-message:active {
+  background: var(--blue);
+  outline: 3px solid var(--blue-30);
+}

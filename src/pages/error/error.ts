@@ -11,7 +11,7 @@ class Error extends Block {
         }));
     }
 
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

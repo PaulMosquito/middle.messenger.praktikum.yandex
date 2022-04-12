@@ -1,3 +1,5 @@
+import { Block } from '../core';
+
 export const checkName = (str = ''):boolean => {
     const string = str.trim();
 
@@ -64,3 +66,41 @@ export const checkMessage = (str = ''):boolean => !!str.match(/.+/);
  * @returns {boolean}
  */
 export const checkEmail = (str = ''):boolean => !!str.match(/[\w-]@[a-zA-Z]{3}\./);
+
+export const logInfo = (info:string) => {
+    /* eslint-disable-next-line no-console */
+    console.log(info);
+};
+
+export const logSubmit = (components:Block[]) => {
+    const errorComponentNames = components
+        .filter(({ state: { error } }:any) => error)
+        .map(({ props: { name } }:any) => name);
+
+    const emptyComponentNames = components
+        .filter(({ state: { value } }:any) => !value);
+
+    const data = components.reduce((
+        acc,
+        { props: { id }, state: { value } }:any,
+    ) => ({
+        ...acc,
+        [id]: value,
+    }), {});
+    logInfo(JSON.stringify(data));
+
+    if (errorComponentNames.length || emptyComponentNames.length) {
+        errorComponentNames.forEach((component) => {
+            logInfo(`${component} has wrong value`);
+        });
+
+        emptyComponentNames.forEach(({ props: { name }, setState }:any) => {
+            logInfo(`${name} is empty`);
+            setState({ error: 'Поле не заполнено' });
+        });
+
+        return false;
+    }
+
+    return false;
+};

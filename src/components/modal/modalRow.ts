@@ -18,7 +18,7 @@ class ModalRow extends Block {
         });
     }
 
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

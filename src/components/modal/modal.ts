@@ -21,7 +21,7 @@ class Modal extends Block {
         });
     }
 
-    render() {
+    public override render() {
         const { list } = this.props as ModalProps;
         const ListComponent = list.reduce((acc, curr, index) => (
             `${acc}			

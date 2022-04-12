@@ -3,7 +3,7 @@ import template from './lenta-message.template';
 import './lenta.css';
 
 class LentaMessage extends Block {
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

@@ -7,9 +7,8 @@ import {
 } from '..';
 import { InputProps } from '../input/input';
 import {
-    checkName, checkLogin, checkEmail, checkPhone,
-} from '../../utils/validation';
-import logSubmit from '../../utils/logging';
+    checkName, checkLogin, checkEmail, checkPhone, logSubmit,
+} from '../../utils';
 import template from './user.template';
 import './user.css';
 
@@ -66,7 +65,7 @@ class User extends Block {
         });
     }
 
-    render() {
+    public override render() {
         const { editable } = this.props as Props;
 
         if (editable) {

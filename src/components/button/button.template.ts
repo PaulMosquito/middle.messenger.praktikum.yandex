@@ -1,3 +1,5 @@
 export default `
-button.button=name
+button(class=className)=name
+	if icon
+		#{Icon}
 `;

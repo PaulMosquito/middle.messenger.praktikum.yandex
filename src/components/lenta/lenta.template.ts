@@ -11,5 +11,5 @@ div.lenta
 			
 	footer.lenta__footer
 		#{LentaMessage}
-		#{ButtonSubmit}
+		#{Button}
 `;

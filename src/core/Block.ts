@@ -6,6 +6,7 @@ export type Keys<T extends Record<string, unknown>> = keyof T;
 export type Values<T extends Record<string, unknown>> = T[Keys<T>];
 type Nullable<T> = T | null;
 type Events = Values<typeof Block.EVENTS>;
+
 export default class Block<P = any> {
     static EVENTS = {
         INIT: 'init',
@@ -14,7 +15,13 @@ export default class Block<P = any> {
         FLOW_RENDER: 'flow:render',
     };
 
-    _element: HTMLElement | null = null;
+    protected _element: HTMLElement | null = null;
+
+    protected readonly props: P;
+
+    protected children: { [id: string]: Block } = {};
+
+    protected state = {};
 
     _meta:{
         props: P
@@ -22,15 +29,9 @@ export default class Block<P = any> {
 
     _id = uuidv4();
 
-    protected children: { [id: string]: Block } = {};
-
-    protected props = {};
-
-    protected state = {};
-
     eventBus: () => EventBus<Events>;
 
-    constructor(propsAndChildren:P) {
+    public constructor(propsAndChildren:P) {
         const eventBus = new EventBus();
 
         const { children, props = {} } = this._getChildren(propsAndChildren);
@@ -203,13 +204,13 @@ export default class Block<P = any> {
         return { children, props };
     }
 
-    setState(nextState:any) {
+    setState = (nextState:any) => {
         if (typeof nextState === 'undefined') {
             return;
         }
 
         Object.assign(this.state, nextState);
-    }
+    };
 
     _createDocumentElement(tagName:string) {
         const element = document.createElement(tagName);

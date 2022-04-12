@@ -1,7 +1,7 @@
 import Block from '../../core/Block';
 import InputForm from './inputForm';
 import template from './input.template';
-import { checkName } from '../../utils/validation';
+import { checkName, logInfo } from '../../utils';
 import './input.css';
 
 export type InputProps = {
@@ -20,14 +20,14 @@ type State = {
 };
 
 class Input extends Block {
-    getStateFromProps(props: InputProps) {
+    public override getStateFromProps(props: InputProps) {
         this.state = {
             value: props.value || '',
             error: '',
         };
     }
 
-    render() {
+    public override render() {
         const {
             name,
             type = 'text',
@@ -52,10 +52,10 @@ class Input extends Block {
 
                     const isError = !checkValue(event.target.value);
                     if (isError) {
-                        console.log(`Error: ${id} - ${event.target.value}`);
+                        logInfo(`Error: ${id} - ${event.target.value}`);
                         this.setState({ error: 'Ошибка валидации, наведите на поле чтобы увидеть подсказку' });
                     } else {
-                        console.log(`${id} - ${event.target.value}`);
+                        logInfo(`${id} - ${event.target.value}`);
                         this.setState({ error: '' });
                     }
                 },

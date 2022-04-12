@@ -7,76 +7,44 @@ import {
     Error,
     Login,
 } from '.';
+import template from './templates/page.template';
 import './page.css';
-
-const PAGES = {
-    '/auth': `
-#{Auth}
-`,
-    '/chat': `
-#{Chat}
-`,
-    '/editprofile': `
-#{EditProfile}
-`,
-    '/error': `
-#{Error}
-`,
-    '/login': `
-#{Login}
-`,
-    '/': `
-#{Login}
-`,
-    '/account': `#{Account}
-`,
-} as any;
-
-const NAME_PAGE_BY_PATHNAMES = {
-    '/': 'Login',
-    '/auth': 'Auth',
-    '/chat': 'Chat',
-    '/edit-profile': 'EditProfile',
-    '/login': 'Login',
-    '/account': 'Account',
-} as any;
-
-const PAGE_BY_PATHNAMES = {
-    '/': Login(),
-    '/auth': Auth(),
-    '/chat': Chat(),
-    '/edit-profile': EditProfile(),
-    '/login': Login(),
-    '/account': Account(),
-} as any;
 
 class Page extends Block {
     constructor() {
-        const { pathname } = document.location as Location;
+        super({
+            Account: Account(),
+            Auth: Auth(),
+            Chat: Chat(),
+            EditProfile: EditProfile(),
+            Login: Login(),
+            events: {
+                change: ({ target: { options } }: any) => {
+                    this.setState({
+                        component: [
+                            '#{Login}',
+                            '#{Auth}',
+                            '#{Chat}',
+                            '#{Account}',
+                            '#{Login}',
+                            '#{EditProfile}',
+                        ][options.selectedIndex],
+                    });
+                },
+            },
+        });
+    }
 
-        if (NAME_PAGE_BY_PATHNAMES[pathname]) {
-            const Component = PAGE_BY_PATHNAMES[pathname];
-
-            super({
-                [NAME_PAGE_BY_PATHNAMES[pathname]]: Component,
-            });
-        } else {
-            super({
-                Error: Error({ errorCode: 404 }),
-            });
-        }
+    getStateFromProps(props: any) {
+        this.state = {
+            page: '/',
+            component: '',
+        };
     }
 
     render() {
-        const template:string | undefined = PAGES[document.location.pathname];
-
-        if (template) {
-            return this.compile(template);
-        }
-
-        return this.compile(`
-            #{Error}
-        `);
+        const { component } = this.state as { component: string };
+        return this.compile(template(component));
     }
 }
 

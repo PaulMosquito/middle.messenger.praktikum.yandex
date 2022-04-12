@@ -23,7 +23,7 @@ class Modal extends Block {
 
     public override render() {
         const { list } = this.props as ModalProps;
-        const ListComponent = list.reduce((acc, curr, index) => (
+        const ListComponent = list.reduce((acc, _, index) => (
             `${acc}			
 		#{ModalRow_${index}}
 `), '');

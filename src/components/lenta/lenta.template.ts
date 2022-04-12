@@ -11,6 +11,5 @@ div.lenta
 			
 	footer.lenta__footer
 		#{LentaMessage}
-		div(class="send-message")
-			#{Icon}
+		#{Button}
 `;

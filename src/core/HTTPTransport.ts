@@ -1,5 +1,12 @@
+type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
+type Option = {
+    headers: Record<string, string>,
+    timeout: number,
+    data: Record<string, any>
+};
+
 export default class HTTPTransport {
-    static METHOD = {
+    static METHOD: Record<Method, Method> = {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
@@ -12,36 +19,36 @@ export default class HTTPTransport {
 
     get(
         url: string,
-        options: { headers: Record<string, string>, timeout: number, data: Record<string, any> },
+        options: Option,
     ) {
         return this.request(url, HTTPTransport.METHOD.GET, { ...options }, options.timeout);
     }
 
     post(
         url: string,
-        options: { headers: Record<string, string>, timeout: number, data: Record<string, any> },
+        options: Option,
     ) {
         return this.request(url, HTTPTransport.METHOD.POST, { ...options }, options.timeout);
     }
 
     delete(
         url: string,
-        options: { headers: Record<string, string>, timeout: number, data: Record<string, any> },
+        options: Option,
     ) {
         return this.request(url, HTTPTransport.METHOD.DELETE, { ...options }, options.timeout);
     }
 
     put(
         url: string,
-        options: { headers: Record<string, string>, timeout: number, data: Record<string, any> },
+        options: Option,
     ) {
         return this.request(url, HTTPTransport.METHOD.PUT, { ...options }, options.timeout);
     }
 
     request(
         url: string,
-        method: string,
-        { data, headers }: { headers: Record<string, string>, data: Record<string, any> },
+        method: Method,
+        { data, headers }: Option,
         timeout = 5000,
     ) {
         return new Promise((resolve, reject) => {

@@ -19,7 +19,10 @@ body {
 #app {
   --grey: #999;
   --white: #fff;
-  --blue: #3369f3;
+  --blue: rgb(51, 105, 243);
+  --blue-10: rgba(51, 105, 243, 0.1);
+  --blue-30: rgba(51, 105, 243, 0.3);
+  --blue-90: rgba(51, 105, 243, 0.9);
 
   --black: rgb(0, 0, 0);
   --black-10: rgba(0, 0, 0, 0.1);

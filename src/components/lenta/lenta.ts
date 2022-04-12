@@ -1,8 +1,10 @@
 import Block from '../../core/Block';
-import { ModalButton, Message, SVG } from '..';
+import {
+    ModalButton, Message, SVG, Button,
+} from '..';
 import LentaMessage from './lenta-message';
 import CONVERSATION from './_mock';
-import { checkMessage } from '../../utils/utils';
+import { checkMessage, logInfo } from '../../utils';
 import template from './lenta.template';
 import './lenta.css';
 
@@ -26,13 +28,13 @@ class Lenta extends Block {
         });
     }
 
-    getStateFromProps() {
+    public override getStateFromProps() {
         this.state = {
             value: '',
         };
     }
 
-    render() {
+    public override render() {
         const { value } = this.state as State;
 
         const Messages = CONVERSATION.reduce((acc:string, _:any, index:number) => (
@@ -49,11 +51,9 @@ class Lenta extends Block {
                     const isError = !checkMessage(event.target.innerText);
 
                     if (isError) {
-                        /* eslint-disable-next-line no-console */
-                        console.log(`Error - ${event.target.innerText}`);
+                        logInfo('Error: message is empty');
                     } else {
-                        /* eslint-disable-next-line no-console */
-                        console.log(`Message field - ${event.target.innerText}`);
+                        logInfo(JSON.stringify({ message: event.target.innerText }));
                     }
                 },
                 keyup: (event: KeyboardEvent & Event & {
@@ -62,6 +62,15 @@ class Lenta extends Block {
                     if (event.key === 'Escape') {
                         this.setState({ value: '', error: '' });
                     }
+                },
+            },
+        });
+
+        this.children.Button = Button({
+            icon: 'arrow',
+            events: {
+                click: () => {
+                    logInfo(JSON.stringify({ message: value }));
                 },
             },
         });

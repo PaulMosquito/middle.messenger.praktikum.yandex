@@ -8,7 +8,7 @@ export type TitleProps = {
 };
 
 class Title extends Block {
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

@@ -25,13 +25,23 @@
   border: 0;
   border-bottom: 1px solid var(--blue);
 }
+.input-form__input_error {
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid var(--error);
+  padding: 4px 0;
+  font-size: var(--font-m);
+}
 .input-form__legend {
   visibility: hidden;
   color: var(--grey);
   padding: 0;
   font-size: var(--font-s);
 }
-.input-form__input:not(:placeholder-shown) + .input-form__legend {
+.input-form__input:not(:placeholder-shown) + .input-form__legend,
+.input-form__input_error:not(:placeholder-shown) + .input-form__legend {
   visibility: visible;
 }
 .input-form__error {

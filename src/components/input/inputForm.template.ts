@@ -1,3 +1,3 @@
 export default `
-input.input-form__input(placeholder=name type=type value=value)
+input(class=className placeholder=name type=type value=value disabled=disabled)
 `;

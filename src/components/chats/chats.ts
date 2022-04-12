@@ -27,7 +27,7 @@ class Chats extends Block {
         });
     }
 
-    render() {
+    public override render() {
         const Conversations:string = LIST.reduce((acc, curr, index) => (
             `${acc}			
 		#{Conversation_${index}}

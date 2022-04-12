@@ -11,7 +11,7 @@ class SVG extends Block {
         super({ width, height, icon });
     }
 
-    render() {
+    public override render() {
         const { icon } = this.props as SVGProps;
 
         return this.compile(ICONS[icon]);

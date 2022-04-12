@@ -1,6 +1,6 @@
-import Block from '../core/Block';
-import { Chats, Lenta } from '../components';
-import template from './templates/chat.template';
+import Block from '../../core/Block';
+import { Chats, Lenta } from '../../components';
+import template from './chat.template';
 
 class Chat extends Block {
     constructor() {
@@ -10,7 +10,7 @@ class Chat extends Block {
         });
     }
 
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

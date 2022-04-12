@@ -1,5 +1,5 @@
-import Block from '../core/Block';
-import template from './templates/error.template';
+import Block from '../../core/Block';
+import template from './error.template';
 
 type ErrorProps = {
     errorCode?: number
@@ -11,7 +11,7 @@ class Error extends Block {
         }));
     }
 
-    render() {
+    public override render() {
         return this.compile(template);
     }
 }

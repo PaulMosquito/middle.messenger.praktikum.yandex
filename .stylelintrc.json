@@ -1,0 +1,7 @@
+{
+    "extends": ["stylelint-config-hudochenkov"],
+    "customSyntax": "postcss-less",
+    "rules": {
+        "selector-max-type": [2, {"ignore": [ "compounded", "descendant", "next-sibling"]}]
+      }
+}
